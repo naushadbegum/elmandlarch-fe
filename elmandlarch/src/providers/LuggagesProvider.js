@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 import LuggagesContext from '../contexts/LuggagesContext';
@@ -13,10 +13,10 @@ export default function LuggagesProvider(props) {
             return luggages;
         },
         getLuggagesByQuery: async (query) => {
-            const response = await axios.get(BASE_URL + '/lugggages', {
+            const response = await axios.get(BASE_URL + '/luggages', {
                 params: query
             });
-            const luggages = response.data.data.luggages;
+            const luggages = response.data.luggages;
             setLuggages(luggages);
             return luggages;
         },
@@ -24,12 +24,14 @@ export default function LuggagesProvider(props) {
             const response = await axios.get(
                 BASE_URL + '/luggages/search_options'
             );
-            const searchOptions = response.data.data.options;
+            // console.log(response.data);
+            const searchOptions = response.data.options;
+            
             return searchOptions;
         },
         getLuggageById: async (luggageId) => {
             const response = await axios.get(BASE_URL + '/luggages/' + luggageId);
-            const luggage = response.data.data.luggage
+            const luggage = response.data.luggage
             return luggage;
         }
     };

@@ -24,16 +24,16 @@ export default function Luggages() {
             const searchOptions = await luggagesContext.getSearchOptions();
             await setSearchOptions(searchOptions);
         })();
-    }, []);
+    }, [luggagesContext]);
 
     useEffect(() => {
         (async () => {
             await luggagesContext.getLuggagesByQuery(query);
         })();
-    }, [query]);
+    }, [query, luggagesContext]);
 
     const generateSelectOptions = (choices) => {
-        if(choices) {
+        if (choices) {
             return choices.map((choice, index) => {
                 return (
                     <option key={index} value={choice[0]}>
@@ -59,15 +59,15 @@ export default function Luggages() {
                     <Accordion.Body>
                         <Form.Group>
                             <Form.Label>Model</Form.Label>
-                                <Form.Control type="text" placeholder="Search by model" name="model" value={formFields.model} onChange={updateFormFields}>
-                                </Form.Control>
+                            <Form.Control type="text" placeholder="Search by model" name="model" value={formFields.model} onChange={updateFormFields}>
+                            </Form.Control>
                         </Form.Group>
                         <Form.Group>
-    <Form.Label>Brand</Form.Label>
-    <Form.Select name='brand_id' value={formFields.brand_id} onChange={updateFormFields}> {generateSelectOptions(searchOptions.brands)}
-    </Form.Select>
-</Form.Group>
-                
+                            <Form.Label>Brand</Form.Label>
+                            <Form.Select name='brand_id' value={formFields.brand_id} onChange={updateFormFields}> 
+                            {generateSelectOptions(searchOptions.brands)}
+                            </Form.Select>
+                        </Form.Group>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
