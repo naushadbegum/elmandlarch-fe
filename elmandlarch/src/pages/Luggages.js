@@ -68,6 +68,18 @@ export default function Luggages() {
                             {generateSelectOptions(searchOptions.brands)}
                             </Form.Select>
                         </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Material</Form.Label>
+                            <Form.Select name='material_id' value={formFields.material_id} onChange={updateFormFields}>
+                            {generateSelectOptions(searchOptions.materials)}
+                            </Form.Select>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Type of Traveller</Form.Label>
+                            <Form.Select name='types' value={formFields.types} onChange={updateFormFields}>
+                            {generateSelectOptions(searchOptions.types)}
+                            </Form.Select>
+                        </Form.Group>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
