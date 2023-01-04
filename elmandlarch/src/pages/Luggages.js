@@ -9,6 +9,7 @@ export default function Luggages() {
 
     const [query, setQuery] = useState({});
     const [searchOptions, setSearchOptions] = useState({});
+    const [priceError, setPriceError] = useState(false);
 
     const [formFields, setFormFields] = useState({
         brand_id: '0',
@@ -51,6 +52,30 @@ export default function Luggages() {
         });
     };
 
+    const searchLuggages = () => {
+        if (
+            formFields.min_cost !== '' &&
+            formFields.max_cost !== '' &&
+            Number(formFields.min_cost) > Number(formFields.max_cost)
+        ){
+            setPriceError(true);
+            return;
+        }else {
+            setPriceError(false);
+        }
+
+        const query = {
+            ...formFields,
+            min_cost: formFields.min_cost
+            ? parseInt(formFields.min_cost * 100)
+            : '',
+            max_cost: formFields.max_cost
+            ? parseInt(formFields.max_cost * 100)
+            : ''
+        };
+        setQuery(query)
+    }
+
     return (
         <React.Fragment>
             <Accordion defaultActiveKey="0" flush>
@@ -79,6 +104,24 @@ export default function Luggages() {
                             <Form.Select name='types' value={formFields.types} onChange={updateFormFields}>
                             {generateSelectOptions(searchOptions.types)}
                             </Form.Select>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Minimum Price</Form.Label>
+                            <Form.Control type="number" name="min_cost" min="0" value={formFields.min_cost} onChange={updateFormFields}/>
+                            {priceError ? (
+                                <Form.Text className='error'>
+                                    Minimum price should be less than max price.
+                                </Form.Text>
+                            ): ('')}
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Maximum Price</Form.Label>
+                            <Form.Control type="number" name="max_cost" min="1" value={formFields.max_cost} onChange={updateFormFields}/>
+                            {priceError ? (
+                                <Form.Text className='error'>
+                                    Maximum price should be more than min price.
+                                </Form.Text>
+                            ): ('')}
                         </Form.Group>
                     </Accordion.Body>
                 </Accordion.Item>
