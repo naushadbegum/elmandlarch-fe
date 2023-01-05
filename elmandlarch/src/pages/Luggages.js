@@ -3,6 +3,9 @@ import LuggagesContext from "../contexts/LuggagesContext";
 import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import SingleCard from '../components/SingleCard';
+import Row from 'react-bootstrap/Row';
+
 
 export default function Luggages() {
     const luggagesContext = useContext(LuggagesContext);
@@ -128,6 +131,21 @@ export default function Luggages() {
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
+            <div className="mt-3 g-4 container-fluid">
+                <Row>
+                    {luggages.length ? (
+                        luggages.map((luggage)=>{
+                            return (
+                                <div key={luggage.id}>
+                                    <SingleCard luggage={luggage}/>
+                                </div>
+                            );
+                        })
+                    ): <div>
+                        <h5>No luggages found</h5>
+                        </div>}
+                </Row>
+            </div>
         </React.Fragment>
 
     )
