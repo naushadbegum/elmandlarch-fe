@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Luggages from './pages/Luggages';
 import LuggagesProvider from './providers/LuggagesProvider';
 import Banner from './components/Banner';
+import NavBar from './components/NavBar';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <React.Fragment>
       <Router>
         <div className="nav">
+          <NavBar />
           <Banner />
         </div>
         <Routes>
