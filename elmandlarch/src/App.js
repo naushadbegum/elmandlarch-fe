@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 
 import UserProvider from './providers/UserProvider';
 import Register from './pages/Register';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -32,6 +33,15 @@ function App() {
           {
           <UserProvider>
             <Register />
+          </UserProvider>}
+          />
+
+        </Routes>
+        <Routes>
+          <Route path='/login' element=
+          {
+          <UserProvider>
+            <Login />
           </UserProvider>}
           />
 
