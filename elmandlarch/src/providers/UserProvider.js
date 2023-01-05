@@ -17,7 +17,7 @@ export default function UserProvider(props){
     // })
     const userContext = {
         // userData, setUserData,
-        registerUser: async (userData) => {
+        register: async (userData) => {
             const response = await axios.post(BASE_URL + '/users/register', userData);
             if(response){
                 // toast.success('Account registered successfully!', {
