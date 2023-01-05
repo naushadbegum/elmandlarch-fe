@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import LuggagesContext from "../contexts/LuggagesContext";
 import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export default function Luggages() {
     const luggagesContext = useContext(LuggagesContext);
@@ -123,6 +124,7 @@ export default function Luggages() {
                                 </Form.Text>
                             ): ('')}
                         </Form.Group>
+                        <Button className="btn btn-dark btn-outline-light mt-3" onClick={searchLuggages}>Search</Button>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
