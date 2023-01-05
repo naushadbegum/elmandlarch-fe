@@ -10,12 +10,12 @@ export default function SingleCard(props) {
     const cost = props.luggage.cost;
 
 return (
-    <Card className="card-luggage">
+    <Card className="card-luggage" style={{ width: '18rem' }}>
         <Card.Img variant="top" src={imageUrl}/>
         <Card.Body>
             <Card.Title>{luggageName}</Card.Title>
             <Card.Text>${cost}</Card.Text>
-            
+            <Button className="mt-3" variant="primary" as={Link} to={`/luggages/${props.luggage.id}/more`}>See More</Button>
         </Card.Body>
     </Card>
 

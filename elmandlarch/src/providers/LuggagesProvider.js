@@ -31,7 +31,9 @@ export default function LuggagesProvider(props) {
         },
         getLuggageById: async (luggageId) => {
             const response = await axios.get(BASE_URL + '/luggages/' + luggageId);
-            const luggage = response.data.luggage
+            
+            const luggage = response.data.luggage;
+            
             return luggage;
         }
     };
