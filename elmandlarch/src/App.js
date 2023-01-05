@@ -7,6 +7,8 @@ import LuggagesProvider from './providers/LuggagesProvider';
 import Banner from './components/Banner';
 import NavBar from './components/NavBar';
 
+import UserProvider from './providers/UserProvider';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -22,6 +24,15 @@ function App() {
           <LuggagesProvider>
             <Luggages/>
           </LuggagesProvider>}
+          />
+
+        </Routes>
+        <Routes>
+          <Route path='/register' element=
+          {
+          <UserProvider>
+            <Register />
+          </UserProvider>}
           />
 
         </Routes>
