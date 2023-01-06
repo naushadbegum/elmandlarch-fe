@@ -57,6 +57,22 @@ const navigateTo = useNavigate();
             console.log(error)
         }
        },
+       logout: async (option = '') => {
+        try {
+            await axios.post(BASE_URL + '/users/logout', {
+                refreshToken: JSON.parse(localStorage.getItem('refreshToken'))
+            });
+
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('refreshToken');
+
+            if (option !== 'expire'){
+                navigateTo('/')
+            }
+        } catch (e){
+            console.log(e);
+        }
+       },
        refreshToken: async () => {
         try{
             const response = await axios.post(BASE_URL + '/users/refresh', {
@@ -72,7 +88,7 @@ const navigateTo = useNavigate();
         catch(e){
             console.log(e);
             if(JSON.parse(localStorage.getItem('refreshToken'))){
-                await userContext.logout();
+                await userContext.logout('expire');
             }
             navigateTo('/login');
 

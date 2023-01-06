@@ -19,6 +19,7 @@ export default function Login(props){
     const register = () => {
         navigate("/register")
     }
+
     const updateFormFields =(event) => {
         setFormFields({
             ...formFields,
@@ -38,6 +39,11 @@ export default function Login(props){
 
     return (
         <React.Fragment>
+            {userContext.checkIfAuthenticated() ? (
+            <div> <h5>Customer Name: </h5>
+                    <h5> Orders Link </h5>
+                <Button onClick={userContext.logout}>Logout</Button>
+            </div>):(
             <div className= 'container-fluid'>
                 <h1>Sign in</h1>
                 <Form.Group>
@@ -67,7 +73,8 @@ export default function Login(props){
                 <Button variant='primary' onClick={login}>Sign In</Button>
                 <h5>Do not have an account? Register now!</h5>
                 <Button variant='primary' onClick={register}>Register</Button>
-            </div>
+            </div>)}
+
         </React.Fragment>
 
     )
