@@ -102,6 +102,19 @@ const navigateTo = useNavigate();
         }
         else {
 
+                    await userContext.refreshToken();
+                    const response = await axios.post(BASE_URL + `/cart/${variantId}/add`, {
+                        quantity: parseInt(quantity)
+                    }, {
+                        headers: {
+                            Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+                        }
+                    });
+                    const result = response.data;
+                    if (result){
+
+                    }
+    
         }
        },
 
