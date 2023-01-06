@@ -16,8 +16,14 @@ function App() {
     <React.Fragment>
       <Router>
         <div className="nav">
-          <NavBar />
           <Banner />
+          <UserProvider>
+            <LuggagesProvider>
+              <NavBar />
+            </LuggagesProvider>
+          </UserProvider>
+          
+          
         </div>
         <Routes>
           <Route path='/' element=
@@ -46,6 +52,7 @@ function App() {
           />
 
         </Routes>
+        
       </Router>
       
     </React.Fragment>

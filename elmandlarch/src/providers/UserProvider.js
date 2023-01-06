@@ -56,7 +56,8 @@ const navigateTo = useNavigate();
         } catch (error){
             console.log(error)
         }
-       }
+       },
+       
     }
 
     return (

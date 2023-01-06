@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -13,6 +14,11 @@ export default function Login(props){
         password: ''
     })
 
+    const navigate = useNavigate();
+
+    const register = () => {
+        navigate("/register")
+    }
     const updateFormFields =(event) => {
         setFormFields({
             ...formFields,
@@ -59,6 +65,8 @@ export default function Login(props){
                     )}
                 </Form.Group>
                 <Button variant='primary' onClick={login}>Sign In</Button>
+                <h5>Do not have an account? Register now!</h5>
+                <Button variant='primary' onClick={register}>Register</Button>
             </div>
         </React.Fragment>
 
