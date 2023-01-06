@@ -57,7 +57,38 @@ const navigateTo = useNavigate();
             console.log(error)
         }
        },
-       
+       refreshToken: async () => {
+        try{
+            const response = await axios.post(BASE_URL + '/users/refresh', {
+                refreshToken: JSON.parse(localStorage.getItem('refreshToken'))
+            }, {
+                headers: {
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+                }
+            });
+            const accessToken = response.data.accessToken;
+            localStorage.setItem('accessToken', JSON.stringify(accessToken));
+        }
+        catch(e){
+            console.log(e);
+            if(JSON.parse(localStorage.getItem('refreshToken'))){
+                await userContext.logout();
+            }
+            navigateTo('/login');
+
+            return false;
+        }
+       },
+       addToCart: async (variantId, quantity) => {
+        if (!userContext.checkIfAuthenticated()){
+            setRedirectTo(`/luggages/${variantId}/view`);
+            navigateTo('/login');
+        }
+        else {
+
+        }
+       },
+
     }
 
     return (
