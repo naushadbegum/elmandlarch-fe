@@ -96,11 +96,15 @@ const navigateTo = useNavigate();
         }
        },
        addToCart: async (variantId, quantity) => {
+        console.log("addtocart")
         if (!userContext.checkIfAuthenticated()){
+            // console.log("if block")
             setRedirectTo(`/luggages/${variantId}/view`);
             navigateTo('/login');
         }
         else {
+            console.log('else block')
+            // console.log("check" , variantId)
 
                     await userContext.refreshToken();
                     const response = await axios.post(BASE_URL + `/cart/${variantId}/add`, {

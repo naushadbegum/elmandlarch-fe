@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import UserProvider from './providers/UserProvider';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import SingleDetail from './pages/SingleDetail';
 
 function App() {
   return (
@@ -52,7 +53,26 @@ function App() {
           />
 
         </Routes>
-        
+
+        {/* <Routes>
+          <Route path='/detail'
+          element=
+          {
+          <UserProvider>
+            <SingleDetail />
+          </UserProvider>}
+          />
+        </Routes> */}
+
+<Routes>
+          <Route path='/luggages/:luggageId/more' element=
+          {
+          <UserProvider>
+            <SingleDetail />
+          </UserProvider>}
+          />
+
+        </Routes>
       </Router>
       
     </React.Fragment>
