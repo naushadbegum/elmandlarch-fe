@@ -67,8 +67,10 @@ function App() {
 <Routes>
           <Route path='/luggages/:luggageId/more' element=
           {
-          <UserProvider>
+            <UserProvider>
+          <LuggagesProvider>
             <SingleDetail />
+          </LuggagesProvider>
           </UserProvider>}
           />
 

@@ -23,9 +23,7 @@ export default function Luggages() {
         min_cost: '',
         max_cost: '',
     });
-
-
-
+    
     useEffect(() => {
         (async () => {
             const searchOptions = await luggagesContext.getSearchOptions();
