@@ -95,11 +95,11 @@ const navigateTo = useNavigate();
             return false;
         }
        },
-       addToCart: async (variantId, quantity) => {
+       addToCart: async (luggageId, variantId, quantity) => {
         console.log("addtocart")
         if (!userContext.checkIfAuthenticated()){
             // console.log("if block")
-            setRedirectTo(`/luggages/${variantId}/view`);
+            setRedirectTo(`/luggages/${luggageId}/view`);
             navigateTo('/login');
         }
         else {

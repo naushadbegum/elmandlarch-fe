@@ -121,7 +121,7 @@ console.log("hi luggage", luggage.brand.brand);
 
     const addCart = async () => {
         console.log(variant.id);
-        await userContext.addToCart(variant.id, formFields.quantity)
+        await userContext.addToCart(luggageId, variant.id, formFields.quantity)
     }
 
 
