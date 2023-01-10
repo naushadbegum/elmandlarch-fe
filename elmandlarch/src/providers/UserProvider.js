@@ -143,6 +143,16 @@ const navigateTo = useNavigate();
 
             return response
         },
+        updateCart: async (variantId, quantity)=>{
+            const response = await axios.put(BASE_URL + `/cart/${variantId}/update`, {
+                quantity: parseInt(quantity)
+            }, {
+                headers: {
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+                }
+            });
+            return response
+        }
 
     }
 
