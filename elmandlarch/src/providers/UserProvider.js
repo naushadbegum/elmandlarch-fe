@@ -80,10 +80,14 @@ const navigateTo = useNavigate();
             }, {
                 headers: {
                     Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+                    
                 }
+
             });
+            console.log("response", response.data);
             const accessToken = response.data.accessToken;
             localStorage.setItem('accessToken', JSON.stringify(accessToken));
+            return true;
         }
         catch(e){
             console.log(e);
@@ -99,7 +103,7 @@ const navigateTo = useNavigate();
         console.log("addtocart")
         if (!userContext.checkIfAuthenticated()){
             // console.log("if block")
-            setRedirectTo(`/luggages/${luggageId}/view`);
+            setRedirectTo(`/luggages/${luggageId}/more`);
             navigateTo('/login');
         }
         else {
@@ -121,6 +125,16 @@ const navigateTo = useNavigate();
     
         }
        },
+       getCart: async () => {
+        const response = await axios.get(BASE_URL + '/cart', {
+          headers: {
+              Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+          }
+        });
+        console.log("get cart function route", response.data.cartItems);
+        const cart = response.data.cartItems;
+        return cart
+     }
 
     }
 

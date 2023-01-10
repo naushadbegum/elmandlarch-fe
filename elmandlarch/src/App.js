@@ -11,6 +11,7 @@ import UserProvider from './providers/UserProvider';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import SingleDetail from './pages/SingleDetail';
+import Story from './pages/Story';
 
 function App() {
   return (
@@ -50,6 +51,14 @@ function App() {
           <UserProvider>
             <Login />
           </UserProvider>}
+          />
+
+        </Routes>
+        <Routes>
+          <Route path='/story' element=
+          {
+            <Story />
+          }
           />
 
         </Routes>

@@ -1,0 +1,62 @@
+.about {
+    padding: 5rem 3rem 3rem 3rem;
+    background: #f8f8f8; 
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+
+.row .column {
+    width: 40%;
+}
+
+.column .tabs{
+    display: flex;
+}
+
+.single-tab{
+    background: white;
+    margin-right: 10px;
+    cursor: pointer;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.single-tab h2{
+    display: block;
+    padding: 10px 16px;
+    border-radius: 4px;
+    color: #3c3c3c;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.about-img{
+    position: relative;
+    background-image: url("https://july.com/static/ac5a358607110493fc2f43eb27912807/7ef7d/comfort.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 600px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/* Register */
+
+.error{
+    color: red;
+}

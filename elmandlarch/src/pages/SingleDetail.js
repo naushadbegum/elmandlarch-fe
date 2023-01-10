@@ -11,7 +11,7 @@ export default function SingleDetail(props){
     const luggagesContext = useContext(LuggagesContext);
     const userContext = useContext(UserContext);
 
-    const [luggage, setLuggage] = useState([]);
+    const [luggage, setLuggage] = useState({});
     const [variant, setVariant] = useState({});
     const [formFields, setFormFields] = useState({});
 	const [error, setError] = useState(false);
@@ -21,9 +21,6 @@ export default function SingleDetail(props){
         (async () => {
 
 			const luggage = await luggagesContext.getLuggageById(luggageId);
-			setLuggage(luggage);
-console.log("hi luggage", luggage.brand.brand);
-
             const colors = [];
             const dimensions = [];
 
@@ -54,8 +51,8 @@ console.log("hi luggage", luggage.brand.brand);
 			console.log("hello", luggage.variants[0].dimension.id);
             
             await setVariant(luggage.variants[0]);
+            await setLuggage(luggage);
 			console.log(luggage.variants[0]);
-            // await setSearchOptions(searchOptions);
             await setFormFields({
                 color_id: luggage.variants[0].color.id,
                 dimension_id: luggage.variants[0].dimension.id,
@@ -124,8 +121,6 @@ console.log("hi luggage", luggage.brand.brand);
         await userContext.addToCart(luggageId, variant.id, formFields.quantity)
     }
 
-
-
     return (
         <React.Fragment>
 			
@@ -144,8 +139,10 @@ console.log("hi luggage", luggage.brand.brand);
             <Form.Group>
             <Form.Label>Select the color of luggage</Form.Label>
             <Form.Select name='color_id' value={formFields.color_id} onChange={updateFormFields}>
-                <option value="4">Green</option>
+                <option value="2">Brown</option>
                 <option value="3">Blue</option>
+                <option value="4">Green</option>
+                
             </Form.Select>
         </Form.Group>
         <Form.Group>
