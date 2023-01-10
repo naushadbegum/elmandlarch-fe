@@ -131,10 +131,18 @@ const navigateTo = useNavigate();
               Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
           }
         });
-        console.log("get cart function route", response.data.cartItems);
         const cart = response.data.cartItems;
         return cart
-     }
+     },
+        deleteCartItem: async (variantId) => {
+            const response = await axios.delete(BASE_URL + `/cart/${variantId}/remove`, {
+                headers: {
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+                }
+            });
+
+            return response
+        },
 
     }
 

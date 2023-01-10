@@ -15,6 +15,12 @@ export default function CartItem(props) {
 
     console.log('quantity', props.cartItem.quantity);
 
+    const deleteCartItem = async () => {
+        await userContext.refreshToken();
+
+        await userContext.deleteCartItem(variantId);
+        
+    }
 
     return (
         <React.Fragment>
@@ -26,6 +32,8 @@ export default function CartItem(props) {
                 {props.cartItem.variant.luggage.model} 
                 {props.cartItem.variant.color.color}
                 {props.cartItem.quantity}
+
+                <Button onClick={deleteCartItem}>Delete</Button>
             </h6>
         </React.Fragment>
     )
