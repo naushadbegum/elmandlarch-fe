@@ -152,6 +152,20 @@ const navigateTo = useNavigate();
                 }
             });
             return response
+        },
+        checkout: async () => {
+            const cartItems = await userContext.getCart();
+
+            if(!cartItems || !cartItems.length){
+                return false
+            }
+
+            const response = await axios.get(BASE_URL + '/checkout',{
+                headers: {
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+                }
+            });
+            return response.data
         }
 
     }

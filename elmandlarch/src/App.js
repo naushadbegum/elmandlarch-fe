@@ -12,6 +12,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import SingleDetail from './pages/SingleDetail';
 import Story from './pages/Story';
+import Checkout from './pages/Checkout';
+import CheckoutSuccess from './pages/CheckoutSuccess';
 
 function App() {
   return (
@@ -62,6 +64,30 @@ function App() {
           />
 
         </Routes>
+        <Routes>
+          <Route path='/checkout' element=
+          {
+          <UserProvider>
+            <Checkout />
+            
+          </UserProvider>}
+          />
+
+        </Routes>
+
+        <Routes>
+          <Route path='/checkout/success' element=
+          {
+          <UserProvider>
+            <CheckoutSuccess />
+            
+          </UserProvider>}
+          />
+
+        </Routes>
+
+        
+        
 
         {/* <Routes>
           <Route path='/detail'

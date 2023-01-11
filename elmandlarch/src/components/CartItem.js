@@ -76,7 +76,6 @@ else {
                 {props.cartItem.variant.color.color}
                 {props.cartItem.quantity}
                 <Button onClick={() => {setUpdate(true)}}>Update Quantity</Button>
-                <Button>Checkout</Button>
                     </React.Fragment>
                     }
             </h6>

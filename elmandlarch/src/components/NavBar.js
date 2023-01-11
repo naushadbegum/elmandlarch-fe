@@ -30,9 +30,15 @@ export default function NavBar(){
   const [cartItems, setCartItems] = useState([]);
   const [cartFilled, setCartFilled] = useState(false);
 
-  // const login = () => {
-  //   navigate("/login")
-  // }
+  const navigateTo = useNavigate();
+  const login = () => {
+    navigateTo("/login")
+  }
+
+  const checkout = () => {
+		setCartShow(false); 
+		navigateTo('/checkout')
+	}
 
   useEffect(() => {
 		(async () => {
@@ -115,6 +121,7 @@ export default function NavBar(){
           </Offcanvas.Header>
           <Offcanvas.Body>
             {cartFilled ? renderCartItems() : ''}
+            {cartFilled && cartItems.length ? (<Button onClick={checkout}>Checkout</Button>): ''}
             </Offcanvas.Body>
         </Offcanvas>
       </React.Fragment>
