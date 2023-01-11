@@ -14,15 +14,15 @@ export default function Checkout() {
         let sessionIdObj = {};
         let publishableKey = null;
 
-        const stripeResult = await userContext.checkout();
-        if (!stripeResult) {
+        const stripeData = await userContext.checkout();
+        if (!stripeData) {
             navigateTo('/')
             return;
         }
 
-        if (stripeResult){
-            sessionIdObj = {sessionId: stripeResult.sessionId };
-            publishableKey = stripeResult.publishableKey
+        if (stripeData){
+            sessionIdObj = {sessionId: stripeData.sessionId };
+            publishableKey = stripeData.publishableKey
         }
 
         const stripe = await loadStripe(publishableKey);

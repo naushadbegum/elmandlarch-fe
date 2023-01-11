@@ -4,7 +4,7 @@ import axios from 'axios';
 import UserContext from '../contexts/UserContext';
 // import 'react-toastify/dist/ReactToastify.css';
 
-const BASE_URL = "https://3000-naushadbegu-elmandlarch-adx4f1umngo.ws-us81.gitpod.io/api";
+const BASE_URL = "https://3000-naushadbegu-elmandlarch-adx4f1umngo.ws-us82.gitpod.io/api";
 
 export default function UserProvider(props){
 
@@ -59,7 +59,7 @@ const navigateTo = useNavigate();
        },
        logout: async (option = '') => {
         try {
-            await axios.post(BASE_URL + '/users/logout', {
+            await axios.post( + '/users/logout', {
                 refreshToken: JSON.parse(localStorage.getItem('refreshToken'))
             });
 
@@ -165,7 +165,18 @@ const navigateTo = useNavigate();
                     Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
                 }
             });
+
+            console.log("checkout", response.data);
             return response.data
+        },
+        orders: async () => {
+            const response = await axios.get(BASE_URL + '/orders', {
+                headers: {
+                    Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
+                }
+            });
+            const orders = response.data.orders;
+            return orders;
         }
 
     }

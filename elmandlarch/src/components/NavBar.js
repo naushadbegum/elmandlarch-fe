@@ -35,6 +35,7 @@ export default function NavBar(){
     navigateTo("/login")
   }
 
+
   const checkout = () => {
 		setCartShow(false); 
 		navigateTo('/checkout')
@@ -60,16 +61,15 @@ export default function NavBar(){
 			}
 		})();
 	}, [reload]);
+
+
   const getCartItems = async () => {
-    console.log('getcartitems');
     const valid = await userContext.refreshToken();
-    console.log('2getcartitems');
+
     console.log(valid);
     if(!valid) {
       return
     }
-    
-
 
     // handleCartShow();
     console.log("check 67 hi");
@@ -111,6 +111,7 @@ export default function NavBar(){
              handleCartShow()
           }}>Cart</Nav.Link>
           </Nav>
+          <Nav.Link eventKey="5" as={Link} to='/orders'>Orders</Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

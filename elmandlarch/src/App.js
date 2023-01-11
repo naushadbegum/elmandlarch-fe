@@ -69,7 +69,6 @@ function App() {
           {
           <UserProvider>
             <Checkout />
-            
           </UserProvider>}
           />
 
@@ -80,7 +79,6 @@ function App() {
           {
           <UserProvider>
             <CheckoutSuccess />
-            
           </UserProvider>}
           />
 
