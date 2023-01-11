@@ -110,8 +110,8 @@ export default function NavBar(){
              getCartItems();
              handleCartShow()
           }}>Cart</Nav.Link>
-          </Nav>
           <Nav.Link eventKey="5" as={Link} to='/orders'>Orders</Nav.Link>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
