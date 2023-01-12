@@ -59,7 +59,7 @@ const navigateTo = useNavigate();
        },
        logout: async (option = '') => {
         try {
-            await axios.post( + '/users/logout', {
+            await axios.post( BASE_URL + '/users/logout', {
                 refreshToken: JSON.parse(localStorage.getItem('refreshToken'))
             });
 

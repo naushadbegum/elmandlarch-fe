@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -20,6 +20,10 @@ export default function Login(props){
         navigate("/register")
     }
 
+    const orders = () => {
+        navigate("/orders")
+    }
+
     const updateFormFields =(event) => {
         setFormFields({
             ...formFields,
@@ -27,8 +31,9 @@ export default function Login(props){
         });
     };
 
-    const login = async (event) => {
+    const login = async () => {
         const result = await userContext.login(formFields);
+        console.log("result", result)
         if(!result){
             setErrors(['error']);
         }
@@ -41,7 +46,7 @@ export default function Login(props){
         <React.Fragment>
             {userContext.checkIfAuthenticated() ? (
             <div> <h5>Customer Name: </h5>
-                    <h5> Orders Link </h5>
+                <Button onClick={orders}>View my orders</Button>
                 <Button onClick={userContext.logout}>Logout</Button>
             </div>):(
             <div className= 'container-fluid'>
@@ -73,7 +78,8 @@ export default function Login(props){
                 <Button variant='primary' onClick={login}>Sign In</Button>
                 <h5>Do not have an account? Register now!</h5>
                 <Button variant='primary' onClick={register}>Register</Button>
-            </div>)}
+            </div>
+            )} 
 
         </React.Fragment>
 

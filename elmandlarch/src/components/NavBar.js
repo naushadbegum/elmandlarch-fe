@@ -14,9 +14,9 @@ export default function NavBar(){
   
   // menu bar 
     
-    // const [show, setShow] = useState(false);
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
 // cart bar
 
@@ -31,8 +31,15 @@ export default function NavBar(){
   const [cartFilled, setCartFilled] = useState(false);
 
   const navigateTo = useNavigate();
-  const login = () => {
-    navigateTo("/login")
+
+const home = () => {
+  navigateTo("/");
+  setShow(false);
+}
+
+  const story = () => {
+    navigateTo("/story");
+    setShow(false);
   }
 
 
@@ -99,18 +106,29 @@ export default function NavBar(){
 
 <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Elm & Larch</Navbar.Brand>
+        <Navbar.Brand eventKey="1" onClick={()=> {
+          handleShow()
+        }}>|||</Navbar.Brand>
+        <Offcanvas show={show} onHide={handleClose} placement="start">
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>Menu</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <h3 onClick={home}>Luggages</h3>
+            <h3 onClick={story}>Our Story</h3>
+            </Offcanvas.Body>
+        </Offcanvas>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link eventKey="1" as={Link} to='/'>Home</Nav.Link>
-          <Nav.Link eventKey="2" as={Link} to='/story'>About Us</Nav.Link>
-          <Nav.Link eventKey="3" as={Link} to='/login'>Account</Nav.Link>
-          <Nav.Link eventKey="4" onClick={()=> {
+          {/* <Nav.Link eventKey="1" as={Link} to='/'>Home</Nav.Link>
+          <Nav.Link eventKey="2" as={Link} to='/story'>About Us</Nav.Link> */}
+          <Nav.Link eventKey="2" as={Link} to='/login'>Account</Nav.Link>
+          <Nav.Link eventKey="3" onClick={()=> {
              getCartItems();
              handleCartShow()
           }}>Cart</Nav.Link>
-          <Nav.Link eventKey="5" as={Link} to='/orders'>Orders</Nav.Link>
+          {/* <Nav.Link eventKey="4" as={Link} to='/orders'>Orders</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -127,9 +145,6 @@ export default function NavBar(){
         </Offcanvas>
       </React.Fragment>
 
-        //       {/* <Button variant="primary" onClick={handleShow}>
-        //   Menu
-        // </Button>
   
         // <Offcanvas show={show} onHide={handleClose}>
         //   <Offcanvas.Header closeButton>
