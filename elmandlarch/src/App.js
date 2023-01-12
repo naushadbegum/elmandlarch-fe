@@ -14,6 +14,7 @@ import SingleDetail from './pages/SingleDetail';
 import Story from './pages/Story';
 import Checkout from './pages/Checkout';
 import CheckoutSuccess from './pages/CheckoutSuccess';
+import Orders from './pages/Orders';
 
 function App() {
   return (
@@ -79,6 +80,16 @@ function App() {
           {
           <UserProvider>
             <CheckoutSuccess />
+          </UserProvider>}
+          />
+
+        </Routes>
+
+        <Routes>
+          <Route path='/orders' element=
+          {
+          <UserProvider>
+            <Orders />
           </UserProvider>}
           />
 

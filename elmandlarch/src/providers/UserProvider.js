@@ -176,6 +176,7 @@ const navigateTo = useNavigate();
                 }
             });
             const orders = response.data.orders;
+            console.log("response.data.orders", response.data.orders);
             return orders;
         }
 

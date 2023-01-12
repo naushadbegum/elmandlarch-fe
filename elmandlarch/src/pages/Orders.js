@@ -5,7 +5,7 @@ import UserContext from '../contexts/UserContext';
 export default function Orders(props) {
     const userContext = useContext(UserContext);
 
-    const [orders, setOrders] = useContext(UserContext);
+    const [orders, setOrders] = useState([]);
 
     useEffect(()=> {
         (async () => {
@@ -13,7 +13,8 @@ export default function Orders(props) {
             if(!valid){
                 return;
             }
-            const orders = await userContext.getOrders();
+            const orders = await userContext.orders();
+            console.log("orders", orders);
             
             setOrders(orders);
     })();
@@ -22,11 +23,30 @@ export default function Orders(props) {
     const showOrders = () => {
         return (
             <React.Fragment>
+                <thead>
+                <tr>
                 <th>ID</th>
+                <th>Total Cost</th>
+                <th>Payment Type</th>
+                <th>Shipping Address</th>
+                <th>Order Date</th>
+                <th>Delivery Date</th>
+                <th>Status</th>
+                </tr>
+                </thead>
+                
                 <tbody>
                     {orders.length ? (orders.map((order) => {
                         return (
+                            <tr key={order.id}>
                             <td>{order.id}</td>
+                            <td>{(order.total_cost /100)}</td>
+                            <td>{order.payment_type}</td>
+                            <td>{order.shipping_address_line1} <br/> {order.shipping_address_line2} <br/> {order.shipping_postal_code}</td>
+                            <td>{new Date(order.order_date.slice(0,-1)).toDateString()}</td>
+                            <td>{new Date(order.delivery_date.slice(0,-1)).toDateString()}</td>
+                            <td>{order.orderStatus.order_status}</td>
+                            </tr>
                         )
                     })): ('')}
                 </tbody>
