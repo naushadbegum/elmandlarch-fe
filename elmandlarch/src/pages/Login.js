@@ -35,6 +35,7 @@ export default function Login(props){
         const result = await userContext.login(formFields);
         console.log("result", result)
         if(!result){
+            console.log("error-set")
             setErrors(['error']);
         }
         else {

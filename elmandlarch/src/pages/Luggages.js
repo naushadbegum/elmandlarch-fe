@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import SingleCard from '../components/SingleCard';
 import Row from 'react-bootstrap/Row';
-
+import css from '../css/style.css';
 
 export default function Luggages() {
     const luggagesContext = useContext(LuggagesContext);
@@ -82,6 +82,16 @@ export default function Luggages() {
 
     return (
         <React.Fragment>
+            {/* <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">    
+            </div> */}
+
+            <div id='home-bg'>
+                <video autoPlay loop muted id='home-video'>
+                    <source src={require('../images/LVvideo.mp4')} type='video/mp4'/>
+                </video>
+                <Button className="call-to-action d-flex justify-content-center">Shop All</Button>
+            </div>
+            
             <Accordion defaultActiveKey="0" flush>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Search</Accordion.Header>

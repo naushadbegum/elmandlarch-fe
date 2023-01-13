@@ -9,9 +9,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import ListGroup from 'react-bootstrap/ListGroup';
 import CartItem from './CartItem';
 import LuggagesContext from '../contexts/LuggagesContext';
+import css from '../css/style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export default function NavBar(){
   
+
+  const shoppingIcon = <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+
   // menu bar 
     
     const [show, setShow] = useState(false);
@@ -121,10 +127,13 @@ const home = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          {/* <Nav.Link eventKey="1" as={Link} to='/'>Home</Nav.Link>
-          <Nav.Link eventKey="2" as={Link} to='/story'>About Us</Nav.Link> */}
-          <Nav.Link eventKey="2" as={Link} to='/login'>Account</Nav.Link>
-          <Nav.Link eventKey="3" onClick={()=> {
+          {/* <Nav.Link eventKey="2" as={Link} to='/'>
+            Home
+          </Nav.Link> */}
+          {/* <Nav.Link eventKey="2" as={Link} to='/story'>About Us</Nav.Link>  */}
+          <Nav.Link eventKey="3" as={Link} to='/login'>
+            Account</Nav.Link>
+          <Nav.Link eventKey="4" onClick={()=> {
              getCartItems();
              handleCartShow()
           }}>Cart</Nav.Link>
@@ -133,7 +142,6 @@ const home = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  {/* handleCartShow(); */}
         <Offcanvas show={cartShow} onHide={handleCartClose} placement="end">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>Cart</Offcanvas.Title>
@@ -144,23 +152,6 @@ const home = () => {
             </Offcanvas.Body>
         </Offcanvas>
       </React.Fragment>
-
-  
-        // <Offcanvas show={show} onHide={handleClose}>
-        //   <Offcanvas.Header closeButton>
-        //     <Offcanvas.Title>Menu</Offcanvas.Title>
-        //   </Offcanvas.Header>
-        //   <Offcanvas.Body>
-        //   <Offcanvas.Title>Luggages</Offcanvas.Title>
-        //   <Offcanvas.Title>Our Story</Offcanvas.Title>
-        //   </Offcanvas.Body>
-        // </Offcanvas>
-
-        // <Button onClick={login}>Account</Button>
-
-        // <Button variant="primary" onClick={handleCartShow} >
-        //   Cart
-        // </Button> */}
       
     );
 }

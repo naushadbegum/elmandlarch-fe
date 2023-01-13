@@ -39,19 +39,26 @@ const navigateTo = useNavigate();
             try{
             const response = await axios.post(BASE_URL + '/users/login', userData);
             // console.log(response.data.accessToken);
+                console.log("response data", response.data);
 
-            const accessToken = response.data.accessToken;
-            // console.log(response.data.accessToken);
-            const refreshToken= response.data.refreshToken;
-            // console.log(refreshToken);
-            localStorage.setItem('accessToken', JSON.stringify(accessToken));
-            localStorage.setItem('refreshToken', JSON.stringify(refreshToken));
+                if (response.data.error === "Invalid email and/or password"){
+                    return false
+                }else {
+                    const accessToken = response.data.accessToken;
+                    // console.log(response.data.accessToken);
+                    const refreshToken= response.data.refreshToken;
+                    // console.log(refreshToken);
+                    localStorage.setItem('accessToken', JSON.stringify(accessToken));
+                    localStorage.setItem('refreshToken', JSON.stringify(refreshToken));        
+                }
 
             if(redirectTo){
                 navigateTo(redirectTo);
                 setRedirectTo('');
             }
             else {navigateTo('/')}
+
+            
             return true;
         } catch (error){
             console.log(error)
