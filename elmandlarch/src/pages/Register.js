@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import css from '../css/style.css';
-
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import UserContext from '../contexts/UserContext';
 
 export default function Register(props) {
@@ -75,12 +75,17 @@ export default function Register(props) {
 
     return (
         <React.Fragment>
-            <h1>Register</h1>
+            <h1>Sign Up</h1>
             <Form.Group>
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                    type="text" name='name' value={formFields.name} onChange={updateFormFields} placeholder='Type your name'
+            <FloatingLabel
+        controlId="floatingInput"
+        label="Name"
+        className="mb-3"
+      >
+                <Form.Control className="login-detail"
+                    type="text" name='name' placeholder='Type your name' value={formFields.name} onChange={updateFormFields} 
                 />
+                </FloatingLabel>
                 {errors.includes('name') ? (
                     <Form.Text className='error'>
                         Name needs to be between 4 to 200 characters
@@ -88,10 +93,15 @@ export default function Register(props) {
                 ) : ('')}
             </Form.Group>
             <Form.Group>
-                <Form.Label>Username</Form.Label>
-                <Form.Control
+            <FloatingLabel
+        controlId="floatingInput"
+        label="Username"
+        className="mb-3"
+      >
+                <Form.Control className="login-detail"
                     type="text" name='username' value={formFields.username} onChange={updateFormFields} placeholder='Type your username'
                 />
+                </FloatingLabel>
                 {errors.includes('username') ? (
                     <Form.Text className='error'>
                         Username needs to be between 4 to 200 characters
@@ -99,10 +109,16 @@ export default function Register(props) {
                 ) : ('')}
             </Form.Group>
             <Form.Group>
-                <Form.Label>Password</Form.Label>
-                <Form.Control
+            <FloatingLabel
+        controlId="floatingInput"
+        label="Password"
+        className="mb-3"
+      >
+                
+                <Form.Control className="login-detail"
                     type="password" name='password' value={formFields.password} onChange={updateFormFields} placeholder='Type your password'
                 />
+                </FloatingLabel>
                 {errors.includes('password') ? (
                     <Form.Text className='error'>
                         Password needs to be between 4 to 200 characters
@@ -110,10 +126,15 @@ export default function Register(props) {
                 ) : ('')}
             </Form.Group>
             <Form.Group>
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
+            <FloatingLabel
+        controlId="floatingInput"
+        label="Confirm Password"
+        className="mb-3"
+      >
+                <Form.Control className="login-detail"
                     type="password" name='confirm_password' value={formFields.confirm_password} onChange={updateFormFields} placeholder='Type your password again'
                 />
+                </FloatingLabel>
                 {errors.includes('confirm_password') ? (
                     <Form.Text className='error'>
                         Password does not match. Type again.
@@ -121,10 +142,15 @@ export default function Register(props) {
                 ) : ('')}
             </Form.Group>
             <Form.Group>
-                <Form.Label>Email</Form.Label>
-                <Form.Control
+            <FloatingLabel
+        controlId="floatingInput"
+        label="Email"
+        className="mb-3"
+      >
+                <Form.Control className="login-detail"
                     type="text" name='email' value={formFields.email} onChange={updateFormFields} placeholder='Type your password again'
                 />
+                </FloatingLabel>
                 {errors.includes('email') ? (
                     <Form.Text className='error'>
                         Enter a valid email
@@ -132,18 +158,23 @@ export default function Register(props) {
                 ) : ('')}
             </Form.Group>
             <Form.Group>
-                <Form.Label>Contact Number</Form.Label>
-                <Form.Control
+            <FloatingLabel
+        controlId="floatingInput"
+        label="Contact Number"
+        className="mb-3"
+      >
+                <Form.Control className="login-detail"
                     type="text" name='contact_number' value={formFields.contact_number} onChange={updateFormFields} placeholder='Type your password again'
                 />
+                </FloatingLabel>
                 {errors.includes('contact_number') ? (
                     <Form.Text className='error'>
                         Contact number must be less than 20 characters
                     </Form.Text>
                 ) : ('')}
             </Form.Group>
-            <Button variant='primary' onClick={register}>
-                Sign Up
+            <Button className="register-button" variant='primary' onClick={register}>
+                CREATE
             </Button>
 
         </React.Fragment>

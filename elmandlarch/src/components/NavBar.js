@@ -119,7 +119,7 @@ const home = () => {
         }}><IoMenuOutline /></Navbar.Brand>
         <Offcanvas show={show} onHide={handleClose} placement="start">
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Menu</Offcanvas.Title>
+            <Offcanvas.Title><img src="E.png" alt="e&l logo" width="200" height="200"/></Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <h3 onClick={home}>Luggages</h3>

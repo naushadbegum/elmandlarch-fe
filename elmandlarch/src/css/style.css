@@ -97,3 +97,34 @@
 .error {
     color: red;
 }
+/* .register-button{
+
+} */
+
+/* Login */
+
+.login{
+    width: 400px;
+    height: 100px;
+}
+
+.login-detail {
+    /* border: none !important; */
+    outline-width: 0;
+    border-radius: 0 !important;
+    /* border-bottom: 2px solid #2d2e2f !important; */
+}
+
+.login-button, .login-register-button, .register-button{
+    border-radius: 0 !important;
+    color: white;
+    background-color: #2d2e2f !important;
+    border-color: transparent;
+}
+
+.login-button:hover , .login-register-button:hover ,.register-button:hover{
+    background-color: #FFDB58 !important;
+    color: #2d2e2f;
+    border-color: transparent;
+}
+

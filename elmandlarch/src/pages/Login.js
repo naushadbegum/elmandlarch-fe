@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 import UserContext from '../contexts/UserContext';
+import css from '../css/style.css';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 export default function Login(props){
     const userContext = useContext(UserContext);
@@ -54,24 +56,32 @@ export default function Login(props){
                 <Button onClick={orders}>View my orders</Button>
                 <Button onClick={userContext.logout}>Logout</Button>
             </div>):(
-            <div className= 'container-fluid'>
-                <h1>Sign in</h1>
-                <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
+            <div className= 'login container-fluid p-3'>
+                <h1>Sign In</h1>
+                <Form.Group >
+                <FloatingLabel
+        controlId="floatingInput"
+        label="Email address"
+        className="mb-3"
+      >
+                    <Form.Control className="login-detail"
                     type="text"
+                    placeholder="name@example.com"
                     name="email"
                     value={formFields.email}
                     onChange={updateFormFields}/>
+                    </FloatingLabel>
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
+                <FloatingLabel controlId="floatingPassword" label="Password">
+                    <Form.Control className="login-detail"
+                    placeholder="Password" 
                     type="password"
                     name="password"
                     value={formFields.password}
                     onChange={updateFormFields}
                     />
+                    </FloatingLabel>
                     {errors.includes('error')? (
                         <Form.Text className='error'>
                             Please check your email address and password and try again.
@@ -80,9 +90,9 @@ export default function Login(props){
                         ''
                     )}
                 </Form.Group>
-                <Button variant='primary' onClick={login}>Sign In</Button>
-                <h5>Do not have an account? Register now!</h5>
-                <Button variant='primary' onClick={register}>Register</Button>
+                <Button className="login-button"variant='primary' onClick={login}>SIGN IN</Button>
+                <h5>Create an account for faster checkout</h5>
+                <Button className="login-register-button"variant='primary' onClick={register}>CREATE</Button>
             </div>
             )} 
 
