@@ -22,7 +22,7 @@ function App() {
     <React.Fragment>
       <Router>
         <div className="nav">
-          <Banner />
+          {/* <Banner /> */}
           <UserProvider>
             <LuggagesProvider>
               <NavBar />

@@ -13,6 +13,7 @@ import css from '../css/style.css';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {FaShoppingCart} from 'react-icons/fa';
 import {FaUserAlt} from 'react-icons/fa';
+import {IoMenuOutline} from 'react-icons/io5';
 
 export default function NavBar(){
   
@@ -115,7 +116,7 @@ const home = () => {
       <Container>
         <Navbar.Brand eventKey="1" onClick={()=> {
           handleShow()
-        }}>|||</Navbar.Brand>
+        }}><IoMenuOutline /></Navbar.Brand>
         <Offcanvas show={show} onHide={handleClose} placement="start">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>Menu</Offcanvas.Title>
@@ -128,9 +129,9 @@ const home = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          {/* <Nav.Link eventKey="2" as={Link} to='/'>
-            Home
-          </Nav.Link> */}
+          <Nav.Link eventKey="2" as={Link} to='/'>
+            Elm & Larch
+          </Nav.Link>
           {/* <Nav.Link eventKey="2" as={Link} to='/story'>About Us</Nav.Link>  */}
           <Nav.Link eventKey="3" as={Link} to='/login'>
             <FaUserAlt /></Nav.Link>

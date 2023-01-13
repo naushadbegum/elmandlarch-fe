@@ -31,6 +31,9 @@ export default function Login(props){
         });
     };
 
+    // console.log("JSON", JSON.parse(localStorage.getItem("userData")).data.name);
+
+    // const name = JSON.parse(localStorage.getItem("userData"))? JSON.parse(localStorage.getItem("userData")).data.name: null
     const login = async () => {
         const result = await userContext.login(formFields);
         console.log("result", result)
@@ -46,7 +49,8 @@ export default function Login(props){
     return (
         <React.Fragment>
             {userContext.checkIfAuthenticated() ? (
-            <div> <h5>Customer Name: </h5>
+            <div> 
+                {/* <h5>{JSON.parse(localStorage.getItem("userData"))? `${name}` : ""}</h5> */}
                 <Button onClick={orders}>View my orders</Button>
                 <Button onClick={userContext.logout}>Logout</Button>
             </div>):(
