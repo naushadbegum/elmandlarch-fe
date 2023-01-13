@@ -10,13 +10,14 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import CartItem from './CartItem';
 import LuggagesContext from '../contexts/LuggagesContext';
 import css from '../css/style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {FaShoppingCart} from 'react-icons/fa';
+import {FaUserAlt} from 'react-icons/fa';
 
 export default function NavBar(){
   
 
-  const shoppingIcon = <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+  // const shoppingIcon = <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
 
   // menu bar 
     
@@ -132,11 +133,11 @@ const home = () => {
           </Nav.Link> */}
           {/* <Nav.Link eventKey="2" as={Link} to='/story'>About Us</Nav.Link>  */}
           <Nav.Link eventKey="3" as={Link} to='/login'>
-            Account</Nav.Link>
+            <FaUserAlt /></Nav.Link>
           <Nav.Link eventKey="4" onClick={()=> {
              getCartItems();
              handleCartShow()
-          }}>Cart</Nav.Link>
+          }}><FaShoppingCart/></Nav.Link>
           {/* <Nav.Link eventKey="4" as={Link} to='/orders'>Orders</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
