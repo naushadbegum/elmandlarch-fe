@@ -87,8 +87,10 @@
 }
 
 
-
-
+.login-buttons, .login-button-create{
+    display: flex;
+    justify-content: center;
+}
 
 
 
@@ -97,9 +99,13 @@
 .error {
     color: red;
 }
-/* .register-button{
 
-} */
+.register{
+    width: 400px;
+    height: 100px;
+}
+
+
 
 /* Login */
 
@@ -112,6 +118,7 @@
     /* border: none !important; */
     outline-width: 0;
     border-radius: 0 !important;
+    border-color: #2d2e2f;
     /* border-bottom: 2px solid #2d2e2f !important; */
 }
 

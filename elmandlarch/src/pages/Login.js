@@ -90,9 +90,13 @@ export default function Login(props){
                         ''
                     )}
                 </Form.Group>
-                <Button className="login-button"variant='primary' onClick={login}>SIGN IN</Button>
-                <h5>Create an account for faster checkout</h5>
-                <Button className="login-register-button"variant='primary' onClick={register}>CREATE</Button>
+                <div className="login-buttons">
+                <Button className="login-button mt-3" variant='primary' onClick={login}>SIGN IN</Button>
+                </div>
+                <h5 className="create-account mt-3">Create an account for faster checkout</h5>
+                <div className="login-button-create">
+                <Button className="login-register-button mt-3" variant='primary' onClick={register}>SIGN UP</Button>
+                </div>
             </div>
             )} 
 

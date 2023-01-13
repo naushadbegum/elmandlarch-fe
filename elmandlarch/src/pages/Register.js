@@ -75,108 +75,110 @@ export default function Register(props) {
 
     return (
         <React.Fragment>
-            <h1>Sign Up</h1>
-            <Form.Group>
-            <FloatingLabel
-        controlId="floatingInput"
-        label="Name"
-        className="mb-3"
-      >
-                <Form.Control className="login-detail"
-                    type="text" name='name' placeholder='Type your name' value={formFields.name} onChange={updateFormFields} 
-                />
-                </FloatingLabel>
-                {errors.includes('name') ? (
-                    <Form.Text className='error'>
-                        Name needs to be between 4 to 200 characters
-                    </Form.Text>
-                ) : ('')}
-            </Form.Group>
-            <Form.Group>
-            <FloatingLabel
-        controlId="floatingInput"
-        label="Username"
-        className="mb-3"
-      >
-                <Form.Control className="login-detail"
-                    type="text" name='username' value={formFields.username} onChange={updateFormFields} placeholder='Type your username'
-                />
-                </FloatingLabel>
-                {errors.includes('username') ? (
-                    <Form.Text className='error'>
-                        Username needs to be between 4 to 200 characters
-                    </Form.Text>
-                ) : ('')}
-            </Form.Group>
-            <Form.Group>
-            <FloatingLabel
-        controlId="floatingInput"
-        label="Password"
-        className="mb-3"
-      >
-                
-                <Form.Control className="login-detail"
-                    type="password" name='password' value={formFields.password} onChange={updateFormFields} placeholder='Type your password'
-                />
-                </FloatingLabel>
-                {errors.includes('password') ? (
-                    <Form.Text className='error'>
-                        Password needs to be between 4 to 200 characters
-                    </Form.Text>
-                ) : ('')}
-            </Form.Group>
-            <Form.Group>
-            <FloatingLabel
-        controlId="floatingInput"
-        label="Confirm Password"
-        className="mb-3"
-      >
-                <Form.Control className="login-detail"
-                    type="password" name='confirm_password' value={formFields.confirm_password} onChange={updateFormFields} placeholder='Type your password again'
-                />
-                </FloatingLabel>
-                {errors.includes('confirm_password') ? (
-                    <Form.Text className='error'>
-                        Password does not match. Type again.
-                    </Form.Text>
-                ) : ('')}
-            </Form.Group>
-            <Form.Group>
-            <FloatingLabel
-        controlId="floatingInput"
-        label="Email"
-        className="mb-3"
-      >
-                <Form.Control className="login-detail"
-                    type="text" name='email' value={formFields.email} onChange={updateFormFields} placeholder='Type your password again'
-                />
-                </FloatingLabel>
-                {errors.includes('email') ? (
-                    <Form.Text className='error'>
-                        Enter a valid email
-                    </Form.Text>
-                ) : ('')}
-            </Form.Group>
-            <Form.Group>
-            <FloatingLabel
-        controlId="floatingInput"
-        label="Contact Number"
-        className="mb-3"
-      >
-                <Form.Control className="login-detail"
-                    type="text" name='contact_number' value={formFields.contact_number} onChange={updateFormFields} placeholder='Type your password again'
-                />
-                </FloatingLabel>
-                {errors.includes('contact_number') ? (
-                    <Form.Text className='error'>
-                        Contact number must be less than 20 characters
-                    </Form.Text>
-                ) : ('')}
-            </Form.Group>
-            <Button className="register-button" variant='primary' onClick={register}>
-                CREATE
-            </Button>
+            <div className="register container-fluid p-3">
+                <h1>Sign Up</h1>
+                <Form.Group>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Name"
+                        className="mb-3"
+                    >
+                        <Form.Control className="login-detail"
+                            type="text" name='name' placeholder='Type your name' value={formFields.name} onChange={updateFormFields}
+                        />
+                    </FloatingLabel>
+                    {errors.includes('name') ? (
+                        <Form.Text className='error'>
+                            Name needs to be between 4 to 200 characters
+                        </Form.Text>
+                    ) : ('')}
+                </Form.Group>
+                <Form.Group>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Username"
+                        className="mb-3"
+                    >
+                        <Form.Control className="login-detail"
+                            type="text" name='username' value={formFields.username} onChange={updateFormFields} placeholder='Type your username'
+                        />
+                    </FloatingLabel>
+                    {errors.includes('username') ? (
+                        <Form.Text className='error'>
+                            Username needs to be between 4 to 200 characters
+                        </Form.Text>
+                    ) : ('')}
+                </Form.Group>
+                <Form.Group>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Password"
+                        className="mb-3"
+                    >
 
+                        <Form.Control className="login-detail"
+                            type="password" name='password' value={formFields.password} onChange={updateFormFields} placeholder='Type your password'
+                        />
+                    </FloatingLabel>
+                    {errors.includes('password') ? (
+                        <Form.Text className='error'>
+                            Password needs to be between 4 to 200 characters
+                        </Form.Text>
+                    ) : ('')}
+                </Form.Group>
+                <Form.Group>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Confirm Password"
+                        className="mb-3"
+                    >
+                        <Form.Control className="login-detail"
+                            type="password" name='confirm_password' value={formFields.confirm_password} onChange={updateFormFields} placeholder='Type your password again'
+                        />
+                    </FloatingLabel>
+                    {errors.includes('confirm_password') ? (
+                        <Form.Text className='error'>
+                            Password does not match. Type again.
+                        </Form.Text>
+                    ) : ('')}
+                </Form.Group>
+                <Form.Group>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Email"
+                        className="mb-3"
+                    >
+                        <Form.Control className="login-detail"
+                            type="text" name='email' value={formFields.email} onChange={updateFormFields} placeholder='Type your password again'
+                        />
+                    </FloatingLabel>
+                    {errors.includes('email') ? (
+                        <Form.Text className='error'>
+                            Enter a valid email
+                        </Form.Text>
+                    ) : ('')}
+                </Form.Group>
+                <Form.Group>
+                    <FloatingLabel
+                        controlId="floatingInput"
+                        label="Contact Number"
+                        className="mb-3"
+                    >
+                        <Form.Control className="login-detail"
+                            type="text" name='contact_number' value={formFields.contact_number} onChange={updateFormFields} placeholder='Type your password again'
+                        />
+                    </FloatingLabel>
+                    {errors.includes('contact_number') ? (
+                        <Form.Text className='error'>
+                            Contact number must be less than 20 characters
+                        </Form.Text>
+                    ) : ('')}
+                </Form.Group>
+
+                <Button className="register-button" variant='primary' onClick={register}>
+                    SIGN UP
+                </Button>
+            </div>
         </React.Fragment>
 
     )
