@@ -150,7 +150,7 @@ const home = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             {cartFilled ? renderCartItems() : ''}
-            {cartFilled && cartItems.length ? (<Button onClick={checkout}>Checkout</Button>): ''}
+            {cartFilled && cartItems.length ? (<div className='d-flex justify-content-center mt-4'><Button onClick={checkout} className="login-button">Checkout</Button></div>): ''}
             </Offcanvas.Body>
         </Offcanvas>
       </React.Fragment>
