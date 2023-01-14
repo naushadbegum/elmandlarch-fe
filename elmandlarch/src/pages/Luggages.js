@@ -29,13 +29,13 @@ export default function Luggages() {
             const searchOptions = await luggagesContext.getSearchOptions();
             await setSearchOptions(searchOptions);
         })();
-    }, [luggagesContext]);
+    }, []);
 
     useEffect(() => {
         (async () => {
             await luggagesContext.getLuggagesByQuery(query);
         })();
-    }, [query, luggagesContext]);
+    }, [query]);
 
     const generateSelectOptions = (choices) => {
         if (choices) {
