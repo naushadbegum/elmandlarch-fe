@@ -92,11 +92,27 @@ export default function SingleDetail(props){
             
             let variants = luggage.variants.filter((variant) => {
                 return (
-                    parseInt(variant.color_id) === parseInt(formFields.color_id)
+                    parseInt(variant.color_id) === parseInt(formFields.color_id) && 
+                    parseInt(variant.dimension_id) === parseInt(formFields.color_id)
                 );
             });
 
             if (variants.length) {
+                setFormFields({
+                    ...formFields,
+                    color_id: variants[0].color_id,
+                    dimension_id: variants[0].dimension_id,
+                });
+                return;
+            }
+
+            variants = luggage.variants.filter((variant) => {
+                return (
+                    parseInt(variant.color_id) === parseInt(formFields.color_id)
+                );
+            })
+
+            if(variants.length){
                 setFormFields({
                     ...formFields,
                     color_id: variants[0].color_id,

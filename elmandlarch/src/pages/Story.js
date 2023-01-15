@@ -6,9 +6,9 @@ export default function Story() {
         <React.Fragment>
             <section className="story">
                 <div className="row">
-
                 <div className="column">
-                    <div className="about-img"></div>
+                    <div className="about-img">
+                    </div>
                 </div>
 
                 <div className="column">
@@ -20,6 +20,13 @@ export default function Story() {
                     </div>
                 </div>
                 </div>
+                <section className='story-quote'>
+                    <div className='story-quote-word'>
+                        <span>
+                            <p>Nothing to lose and a world to see.</p>
+                        </span>
+                    </div>
+                </section>
                 <div className="row">
 
                 <div className="column">

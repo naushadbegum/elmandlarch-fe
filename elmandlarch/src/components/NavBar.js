@@ -112,9 +112,9 @@ const home = () => {
     return (
       <React.Fragment>
 
-<Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand eventKey="1" onClick={()=> {
+<Navbar bg="light" expand="lg" collapseOnSelect={true} className="navbar">
+      <Container className='nav-container'>
+        <Navbar.Brand className="nav_menu"eventKey="1" onClick={()=> {
           handleShow()
         }}><IoMenuOutline /></Navbar.Brand>
         <Offcanvas show={show} onHide={handleClose} placement="start">
@@ -126,7 +126,7 @@ const home = () => {
             <h3 onClick={story}>Our Story</h3>
             </Offcanvas.Body>
         </Offcanvas>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle className='nav_toggler' aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
           <Nav.Link eventKey="2" as={Link} to='/'>

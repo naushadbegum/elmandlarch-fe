@@ -91,9 +91,10 @@ export default function Luggages() {
                 </video>
                 <Button className="call-to-action d-flex justify-content-center">Shop All</Button>
             </div>
-            
+            <div className='accordian p3 mt-4'>
             <Accordion defaultActiveKey="0" flush>
                 <Accordion.Item eventKey="0">
+                    
                     <Accordion.Header>Search</Accordion.Header>
                     <Accordion.Body>
                         <Form.Group>
@@ -137,8 +138,9 @@ export default function Luggages() {
                                 </Form.Text>
                             ): ('')}
                         </Form.Group>
-                        <Button className="btn btn-dark btn-outline-light mt-3" onClick={searchLuggages}>Search</Button>
+                        <Button className="login-button mt-3" onClick={searchLuggages}>Search</Button>
                     </Accordion.Body>
+                    
                 </Accordion.Item>
             </Accordion>
             <div className="mt-3 g-4 container-fluid">
@@ -155,6 +157,7 @@ export default function Luggages() {
                         <h5>No luggages found</h5>
                         </div>}
                 </Row>
+            </div>
             </div>
         </React.Fragment>
 
