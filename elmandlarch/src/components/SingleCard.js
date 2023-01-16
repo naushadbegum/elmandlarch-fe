@@ -24,7 +24,7 @@ return (
             <Card.Title>{luggageName}</Card.Title>
             <Card.Text>${price}</Card.Text>
             {/* <Button className="mt-3" variant="primary" onClick={detail}>See More</Button> */}
-            <Button className="mt-3" variant="primary" as={Link} to={`/luggages/${props.luggage.id}/more`}>See more</Button>
+            <Button className="login-button mt-3" variant="primary" as={Link} to={`/luggages/${props.luggage.id}/more`}>See more</Button>
         </Card.Body>
     </Card>
 

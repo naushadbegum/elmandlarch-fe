@@ -4,7 +4,8 @@ import axios from 'axios';
 import UserContext from '../contexts/UserContext';
 // import 'react-toastify/dist/ReactToastify.css';
 
-const BASE_URL = "https://3000-naushadbegu-elmandlarch-adx4f1umngo.ws-us82.gitpod.io/api";
+
+const BASE_URL = "https://project-3-elm-and-larch.onrender.com/api";
 
 export default function UserProvider(props){
 

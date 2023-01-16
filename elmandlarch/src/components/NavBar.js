@@ -117,13 +117,13 @@ const home = () => {
         <Navbar.Brand className="nav_menu"eventKey="1" onClick={()=> {
           handleShow()
         }}><IoMenuOutline /></Navbar.Brand>
-        <Offcanvas show={show} onHide={handleClose} placement="start">
+        <Offcanvas show={show} onHide={handleClose} placement="start" >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title><img src="E.png" alt="e&l logo" width="200" height="200"/></Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <h3 onClick={home}>Luggages</h3>
-            <h3 onClick={story}>Our Story</h3>
+            <h3 onClick={home} className="menu-name">Luggages</h3>
+            <h3 onClick={story} className="menu-name">Our Story</h3>
             </Offcanvas.Body>
         </Offcanvas>
         <Navbar.Toggle className='nav_toggler' aria-controls="basic-navbar-nav" />

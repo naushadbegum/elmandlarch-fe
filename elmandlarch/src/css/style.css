@@ -3,14 +3,24 @@
     padding: 0;
 }
 
+.nav {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center;
+    background-color: #2d2e2f;
+    color: white;
+}
+
 .navbar {
     width: 100%;
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
+
 .nav-container {
-    top:0;
-    box-shadow: 0px 13px 24px 0px rgba(0 , 0 , 0 , 0.08);
+    top: 0;
+    box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.08);
     padding-top: .5rem;
     padding-bottom: .5rem;
     display: flex;
@@ -21,16 +31,27 @@
     width: 100%;
 }
 
-.basic-navbar-nav{
+.basic-navbar-nav {
     display: flex;
     align-items: center;
     justify-content: flex-end !important;
     gap: 3rem;
 }
 
-.accordian{
+.accordian {
     height: 400px;
     width: 300px
+}
+
+.menu-name {
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+.menu-name:hover {
+    text-decoration: underline;
+    color: #808000;
 }
 
 .about {
@@ -41,6 +62,69 @@
 .row {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.luggage-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.search-section {
+    display: flex !important;
+    flex-direction: row;
+    margin-left: 100px;
+
+}
+
+.card-luggage {
+    text-align: center;
+    border-radius: 0;
+    box-shadow: 0 14px 28px #808000;
+}
+
+/* .row-search {
+
+} */
+
+.call-to-action {
+    border-radius: 0;
+    width: 200px;
+}
+
+.variant-img {
+    width: 30vw;
+}
+
+@media (max-width: 768px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-right: 0px !important;
+    }
+
+    .row .column {
+        width: 100vw !important;
+    }
+
+    .about-img,
+    .about-img-2 {
+        width: 94vw;
+    }
+    .row-search{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-right: 0px !important;
+    }
 }
 
 .row .column {
@@ -54,7 +138,6 @@
 .single-tab {
     background: white;
     margin-right: 10px;
-    cursor: pointer;
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -64,34 +147,30 @@
 
 .single-tab h2 {
     display: block;
-    padding: 10px 16px;
-    border-radius: 4px;
-    color: #3c3c3c;
+    /* padding: 10px 16px;
+    border-radius: 4px; */
+    color: #2d2e2f;
     font-size: 14px;
     font-weight: 600;
 }
 
-.story{
+.story {
     margin-top: 100px;
     margin-bottom: 100px;
+    /* background-color: rgb(250, 245, 239); */
 }
 
-.row{
-    margin-bottom: 100px;
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-.story-quote{
-    background-color: #FFDB58;
+.story-quote {
+    background-color: #fac60f;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 20 0 20%;
+    /* font-family: "Maison Neue Extended", Arial, Helvetica, sans-serif !important; */
+    /* font-family: "Canela", sans-serif; */
 }
 
-.story-quote-word{
+.story-quote-word {
     max-width: 350px;
     color: white;
     padding: 32px 0 32px 0;
@@ -99,6 +178,7 @@
     font-size: 32px;
     text-align: center;
     line-height: 28px;
+    font-family: "Canela", sans-serif;
 }
 
 .about-img {
@@ -108,21 +188,37 @@
     background-size: cover;
     background-position: center center;
     height: 500px;
-    width: 80%;
+    width: 100%
 }
+
+.accordian {
+    height: 500px;
+    width: 100%
+}
+
+.about-img-2 {
+    background-image: url("https://cdn.shopify.com/s/files/1/0023/3124/6681/files/Travel-Sets-2-HP_b29e304f-31a2-41a4-8ef7-c42797ee470f.jpg?v=1673624018&width=1946");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+
 
 /* homepage */
 
 
-.banner-image {
+/* .banner-image {
     background-image: url('https://ap.louisvuitton.com/content/dam/lv/online/high-end/unisex/collection/lady-b/U_LP_Lady_B_Drop_1_v2.html/jcr:content/assets/campaign-he.jpg?imwidth=2048');
     background-size: cover;
-}
+} */
 
 .call-to-action {
-    background-color: #FFDB58;
+    background-color: #fac60f;
     border-color: transparent;
-    color: black;
+    color: #2d2e2f;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     align-items: center;
     font-size: 20px;
@@ -134,8 +230,8 @@
 }
 
 .call-to-action:hover {
-    background-color:black;
-    color: #FFDB58;
+    background-color: #2d2e2f;
+    color: #fac60f;
     border-color: transparent;
 }
 
@@ -152,12 +248,13 @@
 }
 
 
-.login-buttons, .login-button-create{
+.login-buttons,
+.login-button-create {
     display: flex;
     justify-content: center;
 }
 
-.quantity-cart-form{
+.quantity-cart-form {
     outline-width: 0;
     border-radius: 0 !important;
     border-color: #2d2e2f;
@@ -171,7 +268,7 @@
     color: red;
 }
 
-.register{
+.register {
     width: 400px;
     height: 100px;
 }
@@ -180,7 +277,7 @@
 
 /* Login */
 
-.login{
+.login {
     width: 400px;
     height: 100px;
 }
@@ -193,27 +290,31 @@
     /* border-bottom: 2px solid #2d2e2f !important; */
 }
 
-.login-button, .login-register-button, .register-button{
+.login-button,
+.login-register-button,
+.register-button {
     border-radius: 0 !important;
     color: white;
     background-color: #2d2e2f !important;
     border-color: transparent;
 }
 
-.login-button:hover , .login-register-button:hover ,.register-button:hover{
-    background-color: #FFDB58 !important;
+.login-button:hover,
+.login-register-button:hover,
+.register-button:hover {
+    background-color: #fac60f !important;
     color: #2d2e2f;
     border-color: transparent;
 }
 
 .order-logout-button {
-background-color: transparent;
-padding: 0;
-border: none;
-background: none;
-color: #2d2e2f;
-font-weight: bolder;
-margin-top: 0!important;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #2d2e2f;
+    font-weight: bolder;
+    margin-top: 0 !important;
     padding: 0 0 4px;
     border-bottom: 1px solid transparent;
     font-size: 16px;
@@ -224,13 +325,13 @@ margin-top: 0!important;
 }
 
 .order-logout-button:hover,
-.order-logout-button:active  {
-padding: 0 ;
-border: none ;
-background: none !important;
-color:  #008037 !important;
-font-weight:bolder ;
-border-bottom: 4px solid #008037 !important;
+.order-logout-button:active {
+    padding: 0;
+    border: none;
+    background: none !important;
+    color: #008037 !important;
+    font-weight: bolder;
+    border-bottom: 4px solid #008037 !important;
 }
 
 
@@ -243,4 +344,3 @@ color:  #008037 !important;
 font-weight:bolder;
 border-bottom: 4px solid #008037;
 } */
-

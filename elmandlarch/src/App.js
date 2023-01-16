@@ -22,13 +22,12 @@ function App() {
     <React.Fragment>
       <Router>
         <div className="nav">
-          {/* <Banner /> */}
+          <Banner />
           <UserProvider>
             <LuggagesProvider>
               <NavBar />
             </LuggagesProvider>
           </UserProvider>
-          
           
         </div>
         <Routes>
@@ -121,6 +120,7 @@ function App() {
 
         </Routes>
       </Router>
+     
       
     </React.Fragment>
   );

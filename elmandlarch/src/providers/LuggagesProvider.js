@@ -3,7 +3,8 @@ import axios from 'axios';
 
 import LuggagesContext from '../contexts/LuggagesContext';
 
-const BASE_URL = "https://3000-naushadbegu-elmandlarch-adx4f1umngo.ws-us82.gitpod.io/api";
+// const BASE_URL = "https://3000-naushadbegu-elmandlarch-adx4f1umngo.ws-us82.gitpod.io/api";
+const  BASE_URL = "https://project-3-elm-and-larch.onrender.com/api";
 
 export default function LuggagesProvider(props) {
     const [luggages, setLuggages] = useState([]);
