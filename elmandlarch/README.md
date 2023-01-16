@@ -33,9 +33,9 @@ My organisation goals are to sell luggages and at the same time keeping the envi
 | User Stories | Acceptance Criteria |
 | ------------ | ------------------- |
 |As a traveller, I would like to buy a luggage for a business trip.|
-Customer need to search by type of traveller. |
+|Customer need to search by type of traveller. |
 |As an environment enthusiast, I would like to buy a luggage that is sourced from recycled materials and able to choose the different brands. |
-|Customer need to search by brands and all the products sold should be from sustainable source.
+|Customer need to search by brands and all the products sold should be from sustainable source.|
 |As a luggage enthusiast and frequent traveller, I would like to buy a luggage within my budget. |
 |Customer need to search by min and max price of the luggage. | 
 
@@ -44,7 +44,8 @@ Customer need to search by type of traveller. |
 
 #### Database
 
-![Logical Schema] (readme/logical-schema.png)
+![Logical Schema].
+(readme/logical-schema.png)
 
 #### Sitemap
 
