@@ -44,7 +44,7 @@ Customer need to search by type of traveller. |
 
 #### Database
 
-![Logical Schema] ()
+![Logical Schema] (readme/logical-schema.png)
 
 #### Sitemap
 
@@ -121,6 +121,7 @@ The color scheme is inspired from a yellow flower with green stem. The color sch
 
 ## Testing 
 
+The website is tested for responsiveness using Developer Tools on Chrome browser for mobile, tablet and desktop screen widths. The test cases can be found [here](readme/test-cases-elm-and-larch.pdf).
 
 ## Deployment
 
@@ -163,5 +164,9 @@ STRIPE_ENDPOINT_SECRET=
 ---
 
 ## Credits and Acknowledgement
+
+1. Photos of luggages- [Paraval] (https://tourparavel.com/en-sg) 
+2. Wesley Github for algorithm of variants
+3. Paul for the guidance of the project
 
 
