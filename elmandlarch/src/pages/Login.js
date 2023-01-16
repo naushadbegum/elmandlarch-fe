@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import UserContext from '../contexts/UserContext';
 import css from '../css/style.css';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { toast } from "react-toastify";
 
 export default function Login(props) {
     const userContext = useContext(UserContext);
@@ -44,7 +45,7 @@ export default function Login(props) {
             setErrors(['error']);
         }
         else {
-            alert('Welcome to our shop')
+            toast.success("Welcome back. Travelling with you since 1898.");
         }
     }
 

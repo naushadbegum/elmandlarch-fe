@@ -1,26 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import LuggagesContext from '../contexts/LuggagesContext';
 import UserContext from '../contexts/UserContext';
 
-export default function SingleDetail(props) {
+export default function SingleDetail(props){
 
-    const { luggageId } = useParams();
+    const {luggageId} = useParams();
     const luggagesContext = useContext(LuggagesContext);
     const userContext = useContext(UserContext);
 
     const [luggage, setLuggage] = useState({});
     const [variant, setVariant] = useState({});
     const [formFields, setFormFields] = useState({});
-    const [error, setError] = useState(false);
-    // const [searchOptions, setSearchOptions] = useState({});
+	const [error, setError] = useState(false);
 
-    useEffect(() => {
+	useEffect(() => {
         (async () => {
 
-            const luggage = await luggagesContext.getLuggageById(luggageId);
+			const luggage = await luggagesContext.getLuggageById(luggageId);
             const colors = [];
             const dimensions = [];
 
@@ -33,9 +32,9 @@ export default function SingleDetail(props) {
 
             for (let variant of luggage.variants) {
                 const color = [variant.color_id, variant.color.color];
-
+				console.log("variant", variant.color_id,variant.color.color)
                 const dimension = [variant.dimension_id, variant.dimension.dimension];
-
+			
                 if (!selected.colors[color[0]]) {
                     colors.push(color);
                     selected.colors[color[0]] = color[1];
@@ -44,24 +43,28 @@ export default function SingleDetail(props) {
                     dimensions.push(dimension);
                     selected.dimensions[dimension[0]] = dimension[1];
                 }
-
+                
             }
 
+
+			console.log("hello", luggage.variants[0].dimension.id);
+            
             await setVariant(luggage.variants[0]);
             await setLuggage(luggage);
+			console.log(luggage.variants[0]);
             await setFormFields({
                 color_id: luggage.variants[0].color.id,
                 dimension_id: luggage.variants[0].dimension.id,
                 quantity: 1
             });
-
+            
         })();
     }, [luggageId]);
 
-    useEffect(() => {
+	useEffect(() => {
         if (luggage.variants) {
 
-            const variants = luggage.variants.filter((variant) => {
+			const variants = luggage.variants.filter((variant) => {
                 if (
                     parseInt(variant.color_id) === parseInt(formFields.color_id) &&
                     parseInt(variant.dimension_id) === parseInt(formFields.dimension_id)
@@ -71,11 +74,9 @@ export default function SingleDetail(props) {
                 return false;
             });
 
-            if (variants.length) {
-                setVariant(variants[0]);
-                console.log("variants cool", variants[0]);
-                setError(false);
-                // setSearchOptions(getAvailableOptions()); 
+			if (variants.length) {
+                setVariant(variants[0]); 
+                setError(false); 
             }
 
             else {
@@ -87,50 +88,70 @@ export default function SingleDetail(props) {
     useEffect(() => {
         if (error) {
 
-            // let variants = luggage.variants.filter((variant) => {
-            //     return (
-            //         parseInt(variant.color_id) === parseInt(formFields.color_id) &&
-            //         parseInt(variant.dimension_id) === parseInt(formFields.color_id)
-            //     );
-            // });
+            let variants = luggage.variants.filter((variant) => {
+                return (
+                    parseInt(variant.color_id) === parseInt(formFields.color_id) &&
+                    parseInt(variant.dimension_id) === parseInt(formFields.color_id)
+                );
+            });
 
-            // if (variants.length) {
-            //     setFormFields({
-            //         ...formFields,
-            //         color_id: variants[0].color_id,
-            //         dimension_id: variants[0].dimension_id,
-            //     });
-            //     return;
-            // }
+            if (variants.length) {
+                setFormFields({
+                    ...formFields,
+                    color_id: variants[0].color_id,
+                    dimension_id: variants[0].dimension_id,
+                });
+                return;
+            }
 
-            // variants = luggage.variants.filter((variant) => {
-            //     return (
-            //         parseInt(variant.color_id) === parseInt(formFields.color_id)
-            //     );
-            // })
+            variants = luggage.variants.filter((variant) => {
+                return (
+                    parseInt(variant.color_id) === parseInt(formFields.color_id)
+                );
+            })
 
-            // if (variants.length) {
-            //     setFormFields({
-            //         ...formFields,
-            //         color_id: variants[0].color_id,
-            //         dimension_id: variants[0].dimension_id,
-            //     });
-            //     return;
-            // }
+            if (variants.length) {
+                setFormFields({
+                    ...formFields,
+                    color_id: variants[0].color_id,
+                    dimension_id: variants[0].dimension_id,
+                });
+                return;
+            }
         }
     }, [error]);
 
 
-    const updateFormFields = (event) => {
-        setFormFields({
-            ...formFields,
-            [event.target.name]: event.target.value
-        });
-    };
+	const updateFormFields = (event) => {
+
+        if (
+			event.target.name === 'quantity' &&
+			parseInt(event.target.value) > parseInt(variant.stock)
+		) {
+			setFormFields({
+				...formFields,
+				[event.target.name]: variant.stock
+			});
+			return;
+		}
+		else if (event.target.name === 'quantity' &&
+			parseInt(event.target.value) <= 0) {
+			setFormFields({
+				...formFields,
+				[event.target.name]: 1
+			});
+			return;
+		}
+
+		setFormFields({
+			...formFields,
+			[event.target.name]: event.target.value
+		});
+	};
 
 
     const addCart = async () => {
-        // console.log(variant.id);
+        console.log(variant.id);
         await userContext.addToCart(luggageId, variant.id, formFields.quantity)
     }
 
@@ -179,7 +200,6 @@ export default function SingleDetail(props) {
                 </div>
 
             </section>
-
         </React.Fragment>
     )
 }

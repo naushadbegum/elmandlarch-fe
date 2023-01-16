@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../contexts/UserContext';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 
-
+// const BASE_URL = "https://3000-naushadbegu-elmandlarch-adx4f1umngo.ws-us82.gitpod.io/api";
 const BASE_URL = "https://project-3-elm-and-larch.onrender.com/api";
 
 export default function UserProvider(props){
@@ -25,15 +25,7 @@ const navigateTo = useNavigate();
         register: async (userData) => {
             const response = await axios.post(BASE_URL + '/users/register', userData);
             if(response){
-                // toast.success('Account registered successfully!', {
-                //     position: "top-right",
-                //     autoClose: 5000,
-                //     hideProgressBar: false,
-                //     closeOnClick: true,
-                //     pauseOnHover: true,
-                //     draggable: true,
-                //     progress: undefined,
-                // });
+                toast.success("Account successfully registered. Please sign in.");
             }
         },
         login: async (userData) => {
@@ -46,7 +38,7 @@ const navigateTo = useNavigate();
                     const accessToken = response.data.accessToken;
                     const refreshToken= response.data.refreshToken;
                     localStorage.setItem('accessToken', JSON.stringify(accessToken));
-                    localStorage.setItem('refreshToken', JSON.stringify(refreshToken));        
+                    localStorage.setItem('refreshToken', JSON.stringify(refreshToken));  
                 }
 
             if(redirectTo){
@@ -121,9 +113,7 @@ const navigateTo = useNavigate();
                         }
                     });
                     const result = response.data;
-                    if (result){
-
-                    }
+                    console.log("cart result", result);
     
         }
        },

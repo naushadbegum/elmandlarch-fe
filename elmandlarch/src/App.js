@@ -15,11 +15,12 @@ import Story from './pages/Story';
 import Checkout from './pages/Checkout';
 import CheckoutSuccess from './pages/CheckoutSuccess';
 import Orders from './pages/Orders';
-
+import Toastify from "./components/Toastify";
 
 function App() {
   return (
     <React.Fragment>
+      <Toastify />
       <Router>
         <div className="nav">
           <Banner />
