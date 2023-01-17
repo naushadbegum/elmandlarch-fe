@@ -147,6 +147,19 @@ body {
         margin-left: 0px;
         margin-right: 0px !important;
     }
+    .column-card{
+        width: 300px !important;
+        margin-top: 50px;
+    }
+    .search-section{
+        margin-left: 40px;
+    }
+
+}
+
+.row-cart {
+    display: flex;
+    flex-direction: column;
 }
 
 .row .column {
@@ -398,4 +411,5 @@ border-bottom: 4px solid #008037;
     margin-bottom: 5px !important;
     height: 25px;
 }
+
 

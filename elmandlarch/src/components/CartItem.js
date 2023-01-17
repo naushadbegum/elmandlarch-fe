@@ -58,7 +58,7 @@ export default function CartItem(props) {
     return (
         <ListGroup.Item>
             <div className="container">
-                <div className="row">
+                <div className="row-cart">
                     <div className="col-3 d-flex align-items-center">
                         <img className='cart-image'
                             src={props.cartItem.variant.thumbnail_url}

@@ -175,6 +175,7 @@ export default function SingleDetail(props){
                     <div className="column">
                         <div className="tabs">
                             <div className="single-tab">
+                                <p>{luggage.description}</p>
                                 <h5>Select variant:</h5>
                                 <Form.Group>
                                     <Form.Label>Select the color of luggage</Form.Label>
@@ -191,7 +192,7 @@ export default function SingleDetail(props){
                                         <option value="3">Large</option>
                                     </Form.Select>
                                 </Form.Group>
-                                <Button variant='primary' onClick={addCart}>Add To Cart</Button>
+                                <Button variant='primary' className="login-button mt-3" onClick={addCart}>Add To Cart</Button>
 
                             </div>
                         </div>
