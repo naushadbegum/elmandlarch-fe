@@ -1,16 +1,16 @@
 # **Elm & Larch**
 
-![Screenshots of Elm & Larch's homepage]()
+![Screenshots of Elm & Larch's homepage](mockup-project-2.png)
 
 Link to demo: [Elm & Larch](https://elm-and-larch.netlify.app)
 
 #### Test Accounts:
 
-- Backend at [Elm and Larch Express] (https://project-3-elm-and-larch.onrender.com)
+- Backend at [Elm and Larch Express](https://project-3-elm-and-larch.onrender.com)
     - Email: tiffany@gmail.com
     - Password: tiffany
 
-- Frontend at [Elm and Larch React] (https://elm-and-larch.netlify.app)
+- Frontend at [Elm and Larch React](https://elm-and-larch.netlify.app)
     - Email: customer@gmail.com
     - Password: customer91
 
@@ -57,7 +57,7 @@ The color scheme is inspired from a yellow flower with green stem. The color sch
 
 #### Fonts
 
-
+Lemon Milk font was used as serif to represent nature feel and also luxury in the luggage. Fira sans was used for the words to be readable and clear. 
 
 ## Features
 
@@ -74,7 +74,10 @@ The color scheme is inspired from a yellow flower with green stem. The color sch
 
 | Features | Description |
 | -------- | ----------- |
-| 
+| Search for luggages | Customers can search by model, brand, material, min and max price. |
+| Sign in, sign out, sign up | Customer can register for an account, sign in using the email address and password. Then, in the my account page, customer can sign out |
+| Add, delete and update cart | After logging in, users are able to able to add product to cart, delete from cart and update the quantity in the cart.|
+| Checkout | Customers are able to checkout and stripe is used to process payment. Customers will be redirected to orders page in my account after successful payment. |
 
 ## Technologies Used
 
@@ -162,8 +165,10 @@ STRIPE_ENDPOINT_SECRET=
 
 ## Credits and Acknowledgement
 
-1. Photos of luggages- [Paraval] (https://tourparavel.com/en-sg) 
-2. Wesley Github for algorithm of variants
-3. Paul for the guidance of the project
+- Photos of luggages using [Paraval] (https://tourparavel.com/en-sg) [Louis Vuitton](https://ap.louisvuitton.com/eng-sg/homepage?dispatchCountry=SG) [Tumi](https://www.tumi.sg/home) [July](https://july.com/us/) [Away](https://www.awaytravel.com/)
+- Responsive website mockup is created using [CreateMockup.com](https://www.createmockup.com/generate/)
+- Yong Sheng, Paul, Wesley for guidance in the project
+- Wesley's algorithm for selection of variants and github repository
+
 
 

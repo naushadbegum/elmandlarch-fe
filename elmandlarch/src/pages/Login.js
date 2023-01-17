@@ -55,7 +55,7 @@ export default function Login(props) {
                 <div className="login container-fluid p-3">
                     <h3>My Account</h3>
                     <Button onClick={orders} className="login-button mt-3">View my orders</Button>
-                    <Button onClick={userContext.logout} className="login-button mt-1">Logout</Button>
+                    <Button onClick={userContext.logout} className="login-button mt-1">Sign out</Button>
                 </div>) : (
                 <div className='login container-fluid p-3'>
                     <h3>Sign In</h3>
