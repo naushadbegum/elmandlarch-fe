@@ -114,6 +114,7 @@ const home = () => {
 
 <Navbar bg="light" expand="lg" collapseOnSelect={true} className="navbar">
       <Container className='nav-container'>
+        <div className="header-left">
         <Navbar.Brand className="nav_menu"eventKey="1" onClick={()=> {
           handleShow()
         }}><IoMenuOutline /></Navbar.Brand>
@@ -126,13 +127,17 @@ const home = () => {
             <h3 onClick={story} className="menu-name">Our Story</h3>
             </Offcanvas.Body>
         </Offcanvas>
+        </div>
+        <div className='header-logo'>
+          <h1>Elm & Larch</h1>
+        </div>
         <Navbar.Toggle className='nav_toggler' aria-controls="basic-navbar-nav" />
+        <div className='header-right'>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link eventKey="2" as={Link} to='/'>
+          {/* <Nav.Link eventKey="2" as={Link} to='/'>
             Elm & Larch
-          </Nav.Link>
-          {/* <Nav.Link eventKey="2" as={Link} to='/story'>About Us</Nav.Link>  */}
+          </Nav.Link> */}
           <Nav.Link eventKey="3" as={Link} to='/login'>
             <FaUserAlt /></Nav.Link>
           <Nav.Link eventKey="4" onClick={()=> {
@@ -142,6 +147,7 @@ const home = () => {
           {/* <Nav.Link eventKey="4" as={Link} to='/orders'>Orders</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
+        </div>
       </Container>
     </Navbar>
         <Offcanvas show={cartShow} onHide={handleCartClose} placement="end">

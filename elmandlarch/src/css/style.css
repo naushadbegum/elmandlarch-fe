@@ -35,18 +35,23 @@ body {
     margin-right: 0 !important;
 }
 
-.nav-container {
-    top: 0;
-    box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.08);
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+.header-logo{
+    color:#2d2e2f;
+}
+.header-right {
     display: flex;
     align-items: center;
     justify-content: flex-end !important;
-    height: 8vh;
-    background: white;
-    width: 100%;
+   
 }
+
+/* top: 0;
+box-shadow: 0px 13px 24px 0px rgba(0, 0, 0, 0.08);
+padding-top: .5rem;
+padding-bottom: .5rem;
+height: 8vh;
+background: white;
+width: 100%; */
 
 .basic-navbar-nav {
     display: flex;
