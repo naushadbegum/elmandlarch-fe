@@ -177,7 +177,12 @@ width: 100%; */
         left: 40% !important;
         width: 100px;
         font-size: 10px !important;
-
+    }
+    .form-control{
+        width: 80% !important;
+    }
+    .banner-title{
+        font-size: small;
     }
 
 }
