@@ -23,6 +23,12 @@ export default function Orders(props) {
     const showOrders = () => {
         return (
             <React.Fragment>
+                 <div className="container d-flex justify-content-center my-3">
+                    <h3>My Orders</h3>
+                </div>
+
+                <div className="px-5 overflow-scroll">
+                    <table className='table' style={{ backgroundColor: "rgba(255, 255, 255)" }}>
                 <thead>
                 <tr>
                 <th>ID</th>
@@ -50,6 +56,8 @@ export default function Orders(props) {
                         )
                     })): ('')}
                 </tbody>
+                </table>
+                </div>
             </React.Fragment>
 
         )
@@ -57,7 +65,6 @@ export default function Orders(props) {
 
     return (
         <React.Fragment>
-            <h1>Orders</h1>
             <div>
                 {showOrders()}
             </div>
