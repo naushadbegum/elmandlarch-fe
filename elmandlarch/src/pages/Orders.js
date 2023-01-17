@@ -26,7 +26,7 @@ export default function Orders(props) {
                     <h3>My Orders</h3>
                 </div>
 
-                <div className="px-5">
+                <div className="px-5 overflow-scroll">
                     <table className='table' style={{ backgroundColor: "rgba(255, 255, 255)" }}>
                 <thead>
                 <tr>
