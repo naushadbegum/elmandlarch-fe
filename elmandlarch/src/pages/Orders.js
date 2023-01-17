@@ -1,5 +1,4 @@
 import React, {useEffect, useContext, useState} from 'react';
-
 import UserContext from '../contexts/UserContext';
 
 export default function Orders(props) {
@@ -38,6 +37,7 @@ export default function Orders(props) {
                 <th>Order Date</th>
                 <th>Delivery Date</th>
                 <th>Status</th>
+                <th>Receipt</th>
                 </tr>
                 </thead>
                 
@@ -52,6 +52,8 @@ export default function Orders(props) {
                             <td>{new Date(order.order_date.slice(0,-1)).toDateString()}</td>
                             <td>{new Date(order.delivery_date.slice(0,-1)).toDateString()}</td>
                             <td>{order.orderStatus.order_status}</td>
+                            <td><a href={order.receipt_url} target="_blank" className="login-button">Receipt</a></td>
+                            
                             </tr>
                         )
                     })): ('')}
