@@ -159,6 +159,18 @@ width: 100%; */
     .search-section{
         margin-left: 40px;
     }
+    #home-video{
+        width: 100% !important;
+        height: auto !important;
+        object-fit: none;
+    }
+    .call-to-action{
+        /* font-size: 10px;
+        font-weight: 200;
+        left: 30%; */
+        width: 100px;
+        font-size: 10px !important;
+    }
 
 }
 
@@ -258,19 +270,18 @@ width: 100%; */
 .call-to-action {
     background-color: #fac60f;
     border-color: transparent;
-    color: #2d2e2f;
+    color: #80471c;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     align-items: center;
     font-size: 20px;
     font-weight: 500;
-    border-radius: none !important;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 70%;
+    left: 45%;
 }
 
 .call-to-action:hover {
-    background-color: #2d2e2f;
+    background-color: #80471c;
     color: #fac60f;
     border-color: transparent;
 }
