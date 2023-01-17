@@ -64,6 +64,7 @@ const navigateTo = useNavigate();
 
             if (option !== 'expire'){
                 navigateTo('/')
+                toast.success("We have logged you out successfully. See you soon!");
             }
         } catch (e){
             console.log(e);
@@ -114,6 +115,7 @@ const navigateTo = useNavigate();
                     });
                     const result = response.data;
                     console.log("cart result", result);
+                    toast.success("Luggage added to cart!");
     
         }
        },
@@ -132,8 +134,9 @@ const navigateTo = useNavigate();
                     Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
                 }
             });
-
+            toast.success("Luggage deleted from cart");
             return response
+            
         },
         updateCart: async (variantId, quantity)=>{
             const response = await axios.put(BASE_URL + `/cart/${variantId}/update`, {
@@ -143,6 +146,7 @@ const navigateTo = useNavigate();
                     Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`
                 }
             });
+            toast.success("Quantity updated");
             return response
         },
         checkout: async () => {

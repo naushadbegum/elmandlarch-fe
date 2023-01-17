@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 // import { useNavigate } from "react-router-dom";
+import css from '../css/style.css';
 
 export default function SingleCard(props) {
 
@@ -16,10 +17,11 @@ export default function SingleCard(props) {
     // const detail = () => {
     //     navigate("/detail")
     // }
-
+    // style={{ width: '18rem' }}
+    
 return (
-    <Card className="card-luggage" style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={imageUrl}/>
+    <Card className="card-luggage" >
+        <Card.Img className="img-card" variant="top" src={imageUrl}/>
         <Card.Body>
             <Card.Title>{luggageName}</Card.Title>
             <Card.Text>${price}</Card.Text>

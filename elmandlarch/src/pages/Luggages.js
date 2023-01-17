@@ -93,7 +93,7 @@ export default function Luggages() {
             </div>
             <section className="search-section">
                 <div className='row-search'>
-                    <div className='column'>
+                    <div className='column-accordian'>
                         <div className='accordian p3 mt-4'>
                             <Accordion defaultActiveKey="0" flush>
                                 <Accordion.Item eventKey="0">
@@ -148,7 +148,7 @@ export default function Luggages() {
                             </Accordion>
                         </div>
                     </div>
-                    <div className="column" id="search-luggages">
+                    <div className="column-card" id="search-luggages">
                     <div className="tabs">
                         <div className="single-tab">
                             <div className="container-fluid">
