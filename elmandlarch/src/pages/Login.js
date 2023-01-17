@@ -94,7 +94,7 @@ export default function Login(props) {
                     <div className="login-buttons">
                         <Button className="login-button mt-3" variant='primary' onClick={login}>SIGN IN</Button>
                     </div>
-                    <h5 className="create-account mt-3">Create an account for faster checkout</h5>
+                    <h6 className="create-account mt-3">Create an account for faster checkout</h6>
                     <div className="login-button-create">
                         <Button className="login-register-button mt-3" variant='primary' onClick={register}>SIGN UP</Button>
                     </div>

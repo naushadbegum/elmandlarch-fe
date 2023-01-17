@@ -16,7 +16,6 @@ return (
         
         <div className="container d-flex justify-content-center my-3">
             <h3>Checkout success. Thank you for shopping with Elm & Larch</h3>
-            <p>Redirecting ...</p>
         </div>
     </React.Fragment>
 )
