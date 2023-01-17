@@ -59,14 +59,14 @@ const home = () => {
   useEffect(() => {
 		(async () => {
 			if (reload) {
-				// Get cart (reload)
-				setCartFilled(false); // Trigger spinner animation
+	
+				setCartFilled(false); 
 
-				// Refresh token
+
 				const valid = await userContext.refreshToken();
 
 				if (!valid) {
-					setCartShow(false); // Close cart offcanvas if open
+					setCartShow(false);
 				}
 
 				const cartItems = await userContext.getCart();
@@ -86,8 +86,6 @@ const home = () => {
       return
     }
 
-    // handleCartShow();
-    console.log("check 67 hi");
     const cartItems = await userContext.getCart();
     setCartItems(cartItems);
     setCartFilled(true);
