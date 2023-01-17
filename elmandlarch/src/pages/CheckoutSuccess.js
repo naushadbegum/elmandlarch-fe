@@ -15,7 +15,7 @@ return (
     <React.Fragment>
         
         <div className="container d-flex justify-content-center my-3">
-            <h3>Checkout success. Thank you for shopping with Elm & Larch</h3>
+            <h3>Thank you for shopping with Elm & Larch ❤️ Redirecting to order summary...</h3>
         </div>
     </React.Fragment>
 )
