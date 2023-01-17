@@ -32,8 +32,8 @@ export default function Checkout() {
 
     return (
         <React.Fragment>
-            <div>
-                <h3>Redirecting to the checkout page...</h3>
+            <div className="container d-flex justify-content-center my-3">
+                    <h3>Redirecting to the checkout page...</h3>
             </div>
         </React.Fragment>
     )

@@ -177,6 +177,8 @@ export default function SingleDetail(props){
                             <div className="single-tab">
                                 <h5>Description: </h5>
                                 <p className='normal-font'>{luggage.description}</p>
+                                <h5>Price: </h5>
+                                <p className='normal-font'>${(luggage.cost)/ 100}</p>
                                 <h5>Select your choices: </h5>
                                 <Form.Group>
                                     <Form.Label className='normal-font'>Color: </Form.Label>

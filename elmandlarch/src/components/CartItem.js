@@ -68,10 +68,11 @@ export default function CartItem(props) {
                     {update ?
                         <div className='col-9 d-flex flex-column justify-content-center align-items-start pt-2'>
                             <h6 className="p-0 m-0">
-                                {props.cartItem.variant.luggage.brand.brand}{''}
-                                {props.cartItem.variant.luggage.model}
+                                   {props.cartItem.variant.luggage.brand.brand}{''}
+                                    <div></div>
+                                   {props.cartItem.variant.luggage.model}
                             </h6>
-                            <span className="quantity-cart mt-1">
+                            <span className="normal-font quantity-cart mt-1">
                                 Update Quantity: {''}
                             </span>
                             <div className="d-flex align-items-center mt-1">
@@ -92,10 +93,11 @@ export default function CartItem(props) {
                         : <React.Fragment>
                             <div className='col-8 d-flex flex-column justify-content-center pt-2'>
                                 <h6 className="p-0 m-0">
-                                    {props.cartItem.variant.luggage.brand.brand}{''}
-                                    {props.cartItem.variant.luggage.model}
+                                   {props.cartItem.variant.luggage.brand.brand}{''}
+                                    <div></div>
+                                   {props.cartItem.variant.luggage.model}
                                 </h6>
-                                <ul className="cart-offcanvas pt-1">
+                                <ul className="normal-font cart-offcanvas pt-1">
                                     <li>Color: {''}
                                         {props.cartItem.variant.color.color}
                                     </li>
@@ -108,7 +110,7 @@ export default function CartItem(props) {
                                 </ul>
                             </div>
                             <div className='col-1 d-flex flex-column justify-content-start align-items-center'>
-                                <Button onClick={() => { setUpdate(true) }} className="login-button"><FaEdit/></Button>
+                                <Button onClick={() => { setUpdate(true) }} className="login-button pt-1"><FaEdit/></Button>
                             </div>
                         </React.Fragment>
                     }

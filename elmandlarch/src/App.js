@@ -16,6 +16,7 @@ import Checkout from './pages/Checkout';
 import CheckoutSuccess from './pages/CheckoutSuccess';
 import Orders from './pages/Orders';
 import Toastify from "./components/Toastify";
+import CheckoutError from './pages/CheckoutError';
 
 function App() {
   return (
@@ -81,6 +82,16 @@ function App() {
           {
           <UserProvider>
             <CheckoutSuccess />
+          </UserProvider>}
+          />
+
+        </Routes>
+
+        <Routes>
+          <Route path='/checkout/error' element=
+          {
+          <UserProvider>
+            <CheckoutError />
           </UserProvider>}
           />
 

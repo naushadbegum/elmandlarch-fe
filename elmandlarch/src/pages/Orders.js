@@ -27,7 +27,7 @@ export default function Orders(props) {
                     <h3>My Orders</h3>
                 </div>
 
-                <div className="px-5 overflow-scroll">
+                <div className="px-5">
                     <table className='table' style={{ backgroundColor: "rgba(255, 255, 255)" }}>
                 <thead>
                 <tr>
@@ -41,7 +41,7 @@ export default function Orders(props) {
                 </tr>
                 </thead>
                 
-                <tbody>
+                <tbody className="normal-font">
                     {orders.length ? (orders.map((order) => {
                         return (
                             <tr key={order.id}>

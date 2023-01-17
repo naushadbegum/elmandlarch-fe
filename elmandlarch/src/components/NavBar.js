@@ -103,7 +103,7 @@ const home = () => {
 
       )
     }else {
-      alert('nothing in your cart')
+      console.log("nothing in cart");
     }
   }
 
