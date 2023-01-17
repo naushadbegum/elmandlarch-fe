@@ -1,6 +1,6 @@
 # **Elm & Larch**
 
-![Screenshots of Elm & Larch's homepage](mockup-project-2.png)
+![Screenshots of Elm & Larch's homepage](readme/mockup-project-3.png)
 
 Link to demo: [Elm & Larch](https://elm-and-larch.netlify.app)
 
