@@ -76,7 +76,7 @@ export default function Register(props) {
     return (
         <React.Fragment>
             <div className="register container-fluid p-3">
-                <h1>Sign Up</h1>
+                <h3>Sign Up</h3>
                 <Form.Group>
                     <FloatingLabel
                         controlId="floatingInput"

@@ -107,6 +107,8 @@ const home = () => {
     }
   }
 
+  const style = { color: "#80471c", fontSize: "1.5em" }
+
     return (
       <React.Fragment>
 
@@ -115,7 +117,7 @@ const home = () => {
         <div className="header-left">
         <Navbar.Brand className="nav_menu"eventKey="1" onClick={()=> {
           handleShow()
-        }}><IoMenuOutline /></Navbar.Brand>
+        }}><IoMenuOutline style={style} /></Navbar.Brand>
         <Offcanvas show={show} onHide={handleClose} placement="start" >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title><img src="E.png" alt="e&l logo" width="200" height="200"/></Offcanvas.Title>
@@ -137,11 +139,11 @@ const home = () => {
             Elm & Larch
           </Nav.Link> */}
           <Nav.Link eventKey="3" as={Link} to='/login'>
-            <FaUserAlt /></Nav.Link>
+            <FaUserAlt style={style} /></Nav.Link>
           <Nav.Link eventKey="4" onClick={()=> {
              getCartItems();
              handleCartShow()
-          }}><FaShoppingCart/></Nav.Link>
+          }}><FaShoppingCart style={style} /></Nav.Link>
           {/* <Nav.Link eventKey="4" as={Link} to='/orders'>Orders</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>

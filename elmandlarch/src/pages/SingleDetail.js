@@ -175,17 +175,18 @@ export default function SingleDetail(props){
                     <div className="column">
                         <div className="tabs">
                             <div className="single-tab">
-                                <p>{luggage.description}</p>
-                                <h5>Select variant:</h5>
+                                <h5>Description: </h5>
+                                <p className='normal-font'>{luggage.description}</p>
+                                <h5>Select your choices: </h5>
                                 <Form.Group>
-                                    <Form.Label>Select the color of luggage</Form.Label>
+                                    <Form.Label className='normal-font'>Color: </Form.Label>
                                     <Form.Select name='color_id' value={formFields.color_id} onChange={updateFormFields}>
                                         <option value="2">Brown</option>
                                         <option value="3">Blue</option>
                                     </Form.Select>
                                 </Form.Group>
                                 <Form.Group>
-                                    <Form.Label>Select the size of luggage</Form.Label>
+                                    <Form.Label className='normal-font'>Size: </Form.Label>
                                     <Form.Select name='dimension_id' value={formFields.dimension_id} onChange={updateFormFields}>
                                         <option value="1">Small</option>
                                         <option value="2">Medium</option>

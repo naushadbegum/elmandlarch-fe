@@ -15,7 +15,7 @@ export default function Story() {
                         <div className="tabs">
                             <div className="single-tab">
                                 <h1>Why Elm & Larch?</h1>
-                                <h5>We exist to bring better design and thinking around how we travel.
+                                <h5 className="normal-font">We exist to bring better design and thinking around how we travel.
 
                                     Born in Singapore. We've taken a Singaporean approach to luggage: tough to break, beautiful to look at.
 
@@ -27,7 +27,7 @@ export default function Story() {
                 <section className='story-quote'>
                     <div className='story-quote-word'>
                         <span>
-                            <p>Nothing to lose and a world to see.</p>
+                            <p className="lemon-font">Nothing to lose and a world to see.</p>
                         </span>
                     </div>
                 </section>
@@ -37,7 +37,7 @@ export default function Story() {
                         <div className="tabs">
                             <div className="single-tab">
                                 <h1>We are a travel-inspired brand with sustainability at the core of everything we do</h1>
-                                <h5>We believe travel can be transformative and celebrate all forms, local and far - from a trip to the park to a milestone life celebration on the other side of the world.  We create impeccably designed, multi-functional, sustainable bags, luggage and accessories: companions for all journeys.</h5>
+                                <h5 className="normal-font">We believe travel can be transformative and celebrate all forms, local and far - from a trip to the park to a milestone life celebration on the other side of the world.  We create impeccably designed, multi-functional, sustainable bags, luggage and accessories: companions for all journeys.</h5>
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,13 @@
     padding: 0;
 }
 
-/* 'Fira Sans', sans-serif; */
+.normal-font{
+    font-family: 'Fira Sans', sans-serif !important;
+}
+
+.lemon-font{
+    font-family: "lemon";
+}
 
 body {
     background-color: #edf2de !important;

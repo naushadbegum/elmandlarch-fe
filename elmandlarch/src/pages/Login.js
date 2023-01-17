@@ -52,13 +52,13 @@ export default function Login(props) {
     return (
         <React.Fragment>
             {userContext.checkIfAuthenticated() ? (
-                <div>
-                    <h3>Welcome Back</h3>
-                    <Button onClick={orders} className="order-logout-button">View my orders</Button>
-                    <Button onClick={userContext.logout} className="order-logout-button">Logout</Button>
+                <div className="login container-fluid p-3">
+                    <h3>My Account</h3>
+                    <Button onClick={orders} className="login-button mt-3">View my orders</Button>
+                    <Button onClick={userContext.logout} className="login-button mt-1">Logout</Button>
                 </div>) : (
                 <div className='login container-fluid p-3'>
-                    <h1>Sign In</h1>
+                    <h3>Sign In</h3>
                     <Form.Group >
                         <FloatingLabel
                             controlId="floatingInput"
