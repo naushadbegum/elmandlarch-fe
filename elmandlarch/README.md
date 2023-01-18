@@ -45,8 +45,11 @@ My organisation goals are to sell luggages and at the same time keeping the envi
 
 #### Sitemap
 
+![Frontend sitemap](readme/frontend-sitemap.png)
+![Backend sitemap](readme/backend-sitemap.png)
+
 #### Wireframes
-![Wireframes](readme/wireframes.pdf)
+[Wireframes](readme/wireframes.pdf)
 
 ### Design Decisions
 
@@ -166,7 +169,7 @@ STRIPE_ENDPOINT_SECRET=
 
 ## Credits and Acknowledgement
 
-- Photos of luggages using [Paraval] (https://tourparavel.com/en-sg) [Louis Vuitton](https://ap.louisvuitton.com/eng-sg/homepage?dispatchCountry=SG) [Tumi](https://www.tumi.sg/home) [July](https://july.com/us/) [Away](https://www.awaytravel.com/)
+- Photos of luggages using [Paraval](https://tourparavel.com/en-sg) [Louis Vuitton](https://ap.louisvuitton.com/eng-sg/homepage?dispatchCountry=SG) [Tumi](https://www.tumi.sg/home) [July](https://july.com/us/) [Away](https://www.awaytravel.com/)
 - Responsive website mockup is created using [CreateMockup.com](https://www.createmockup.com/generate/)
 - Yong Sheng, Paul, Wesley for guidance in the project
 - Wesley's algorithm for selection of variants and github repository
