@@ -46,6 +46,7 @@ My organisation goals are to sell luggages and at the same time keeping the envi
 #### Sitemap
 
 #### Wireframes
+![Wireframes](readme/wireframes.pdf)
 
 ### Design Decisions
 
@@ -169,6 +170,7 @@ STRIPE_ENDPOINT_SECRET=
 - Responsive website mockup is created using [CreateMockup.com](https://www.createmockup.com/generate/)
 - Yong Sheng, Paul, Wesley for guidance in the project
 - Wesley's algorithm for selection of variants and github repository
+- Serif font from [Dafont](https://www.dafont.com/)
 
 
 
